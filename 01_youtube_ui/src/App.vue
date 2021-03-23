@@ -19,11 +19,11 @@
         <!-- top bar -->
         <div class="flex p-4 space-x-10 justify-between place-items-center">
           <!-- YouTube logo -->
-          <div class="flex space-x-2 text-4xl">
+          <div class="flex space-x-2 text-5xl">
             <div>
               <fa :icon="['fab', 'youtube']" class="text-red-500" />
             </div>
-            <div class="font-black">YouTube</div>
+            <div class="font-bold">YouTube</div>
           </div>
 
           <!-- Search bar -->
@@ -47,16 +47,16 @@
             <fa icon="th" />
             <fa icon="ellipsis-v" />
             <div
-              class="border-solid border border-blue-400 p-4 text-blue-400 rounded text-2xl flex space-x-2 place-items-center"
+              class="border-solid border border-blue-400 p-4 text-blue-400 rounded text-2xl flex space-x-2"
             >
               <fa icon="user-circle" class="text-4xl" />
-              <div>SIGN IN</div>
+              <div class="self-center">SIGN IN</div>
             </div>
           </div>
         </div>
 
         <!-- tag search -->
-        <div class="flex flex-row space-x-4 p-4">
+        <div class="flex flex-row space-x-4 p-4 px-8 select-none">
           <div
             v-for="tag in tags"
             v-bind:key="tag"
@@ -67,14 +67,31 @@
         </div>
 
         <!-- content -->
-        <div class="grid grid-cols-4 bg-black h-screen p-4">
-          <div>What is Vue.js?</div>
-          <div>What is Tailwind CSS?</div>
-          <div>Vue vs React JS?</div>
-          <div>Vue vs React JS?</div>
-          <div>Vue vs React JS?</div>
-          <div>Vue vs React JS?</div>
-          <div>Vue vs React JS?</div>
+        <div class="flex flex-wrap bg-gray-700 h-screen p-4">
+          <div v-for="video in videos" :key="video.title" class="w-4/12 px-4">
+            <div class="relative">
+              <div class="absolute bottom-0 right-2 bg-black rounded p-2">
+                {{ video.video_length }}
+              </div>
+              <img :src="video.thumbnail" class="rounded" title="hello" />
+            </div>
+            <div class="flex py-4 space-x-2">
+              <div class="w-2/12">
+                <img :src="video.profile_pic" class="rounded-full" />
+              </div>
+              <div class="flex flex-col space-y-2">
+                <div class="text-xl font-bold">
+                  {{ video.title }}
+                </div>
+                <div class="flex flex-col float-right pb-4">
+                  <div class="">
+                    {{ video.creator }}
+                  </div>
+                  <div>{{ video.views }} views ● {{ video.upload }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -130,6 +147,64 @@ export default {
         'react',
         'vue.js',
         'programming',
+      ],
+      videos: [
+        {
+          thumbnail: '/images/01.png',
+          video_length: '10:05',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Coding a Tinder for Memes with the Giphy API and Vue.js',
+          creator: '@SuboptimalEng',
+          views: '2.5k',
+          upload: '1 day ago',
+        },
+        {
+          thumbnail: '/images/02.png',
+          video_length: '08:50',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Getting Started with Vue.js, Vetur and Airbnb ESLint Config',
+          creator: '@SuboptimalEng',
+          views: '3k',
+          upload: '6 day ago',
+        },
+        {
+          thumbnail: '/images/03.png',
+          video_length: '09:42',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Coding a Todo App with Vue.js in 10 Minutes',
+          creator: '@SuboptimalEng',
+          views: '2k',
+          upload: '2 weeks ago',
+        },
+        {
+          thumbnail: '/images/04.png',
+          video_length: '08:08',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Getting Started with Vim and Visual Studio Code',
+          creator: '@SuboptimalEng',
+          views: '10k',
+          upload: '2 months ago',
+        },
+        {
+          thumbnail: '/images/05.png',
+          video_length: '07:45',
+          profile_pic: '/images/profile_pic.png',
+          title:
+            'VS Code IntelliSense Suggestions Navigation with Vim Commands',
+          creator: '@SuboptimalEng',
+          views: '4k',
+          upload: '1 month ago',
+        },
+        {
+          thumbnail: '/images/06.png',
+          video_length: '08:22',
+          profile_pic: '/images/profile_pic.png',
+          title:
+            'Productive Mac OS iTerm2 Setup with Oh My Zsh, Vim and Autosuggestions',
+          creator: '@SuboptimalEng',
+          views: '6k',
+          upload: '2 months ago',
+        },
       ],
     };
   },
