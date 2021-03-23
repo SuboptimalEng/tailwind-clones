@@ -6,7 +6,7 @@
         <div
           v-for="item in navbar"
           v-bind:key="item"
-          class="flex flex-col place-items-center space-y-2 hover:bg-gray-800 px-2 py-4"
+          class="flex flex-col place-items-center space-y-2 hover:bg-gray-800 px-4 py-8"
         >
           <fa :icon="item.icon" class="text-3xl" />
           <div v-if="item.name">
@@ -16,13 +16,43 @@
       </div>
 
       <div class="flex flex-col divide-y divide-gray-200 w-screen text-xl">
-        <!-- top search bar -->
-        <div class="flex py-4 space-x-10">
-          <div>youtube</div>
-          <div>search</div>
-          <div>search with voice</div>
-          <div>youtube apps</div>
-          <div>settings</div>
+        <!-- top bar -->
+        <div class="flex p-4 space-x-10 justify-between place-items-center">
+          <!-- YouTube logo -->
+          <div class="flex space-x-2 text-4xl">
+            <div>
+              <fa :icon="['fab', 'youtube']" class="text-red-500" />
+            </div>
+            <div class="font-black">YouTube</div>
+          </div>
+
+          <!-- Search bar -->
+          <div class="flex text-2xl place-items-center space-x-10">
+            <div class="flex bg-black border-solid border border-gray-200">
+              <input
+                class="bg-black w-96 px-2"
+                type="text"
+                placeholder="Search"
+              />
+              <div
+                class="bg-gray-800 px-4 py-1 border-solid border border-gray-200"
+              >
+                <fa icon="search" />
+              </div>
+            </div>
+            <fa icon="microphone" class="text-3xl" />
+          </div>
+
+          <div class="flex space-x-10 place-items-center text-4xl">
+            <fa icon="th" />
+            <fa icon="ellipsis-v" />
+            <div
+              class="border-solid border border-blue-400 p-4 text-blue-400 rounded text-2xl flex space-x-2 place-items-center"
+            >
+              <fa icon="user-circle" class="text-4xl" />
+              <div>SIGN IN</div>
+            </div>
+          </div>
         </div>
 
         <!-- tag search -->
@@ -54,8 +84,10 @@
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fas);
+library.add(fab);
 
 export default {
   name: 'App',
