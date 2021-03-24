@@ -1,7 +1,7 @@
 # 01_youtube_ui
 
 ## Sample UI
-[YouTube UI](/demo/youtube_ui.png)
+[YouTube UI](./demo/youtube_ui.png)
 
 ## Project setup
 ```
