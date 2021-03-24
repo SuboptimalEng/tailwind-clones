@@ -1,7 +1,7 @@
 # 01_youtube_home_page
 
 ## Sample UI
-![asd](/demo/01_youtube_home_page.png)
+![](/demos/01_youtube_home_page.png)
 
 ## Project setup
 ```
