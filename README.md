@@ -1,2 +1,3 @@
-# TailwindClones
-🍃 Cloning popular websites' UI with Tailwind CSS
+# 🍃 Cloning the UIs' of popular websites with Tailwind CSS
+
+01 - YouTube Home Page UI Clone
