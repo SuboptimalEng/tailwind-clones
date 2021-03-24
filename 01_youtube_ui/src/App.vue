@@ -67,7 +67,7 @@
         </div>
 
         <!-- content -->
-        <div class="flex flex-wrap bg-gray-700 h-screen p-4">
+        <div class="flex flex-wrap bg-gray-700 h-full p-4">
           <div v-for="video in videos" :key="video.title" class="w-4/12 px-4">
             <div class="relative">
               <div class="absolute bottom-0 right-2 bg-black rounded p-2">
@@ -150,33 +150,6 @@ export default {
       ],
       videos: [
         {
-          thumbnail: '/images/clone.png',
-          video_length: '10:05',
-          profile_pic: '/images/profile_pic.png',
-          title: 'Cloning the YouTube Home Page UI with Tailwind CSS',
-          creator: '@SuboptimalEng',
-          views: '2.5k',
-          upload: '1 day ago',
-        },
-        {
-          thumbnail: '/images/clone.png',
-          video_length: '08:50',
-          profile_pic: '/images/profile_pic.png',
-          title: 'How to Clone the YouTube UI using Tailwind and Vue.js',
-          creator: '@SuboptimalEng',
-          views: '3k',
-          upload: '6 day ago',
-        },
-        {
-          thumbnail: '/images/clone.png',
-          video_length: '09:42',
-          profile_pic: '/images/profile_pic.png',
-          title: 'Recreating the YouTube Home Page UI with Tailwind CSS',
-          creator: '@SuboptimalEng',
-          views: '2k',
-          upload: '2 weeks ago',
-        },
-        {
           thumbnail: '/images/01.png',
           video_length: '10:05',
           profile_pic: '/images/profile_pic.png',
@@ -231,6 +204,33 @@ export default {
           creator: '@SuboptimalEng',
           views: '6k',
           upload: '2 months ago',
+        },
+        {
+          thumbnail: '/images/clone.png',
+          video_length: '10:05',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Cloning the YouTube Home Page UI with Tailwind CSS',
+          creator: '@SuboptimalEng',
+          views: '2.5k',
+          upload: '1 day ago',
+        },
+        {
+          thumbnail: '/images/clone.png',
+          video_length: '08:50',
+          profile_pic: '/images/profile_pic.png',
+          title: 'How to Clone the YouTube UI using Tailwind and Vue.js',
+          creator: '@SuboptimalEng',
+          views: '3k',
+          upload: '6 day ago',
+        },
+        {
+          thumbnail: '/images/clone.png',
+          video_length: '09:42',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Recreating the YouTube Home Page UI with Tailwind CSS',
+          creator: '@SuboptimalEng',
+          views: '2k',
+          upload: '2 weeks ago',
         },
       ],
     };
