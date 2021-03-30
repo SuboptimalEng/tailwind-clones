@@ -91,7 +91,7 @@
         </div>
       </div>
 
-      <div class="flex">
+      <div class="flex space-x-2">
         <!-- coins -->
         <div
           class="flex place-items-center rounded-full border border-solid border-yellow-300 px-4 py-2 space-x-2 bg-yellow-200 hover:bg-yellow-500"
