@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gray-300 h-screen text-black">
+  <div class="bg-gray-300 text-black">
     <!-- navbar -->
     <div
-      class="bg-white w-full fixed px-6 py-2 flex space-x-4 md:space-x-8 place-items-center"
+      class="bg-white w-full fixed px-6 py-2 flex place-items-center justify-evenly"
     >
       <div class="flex text-3xl space-x-2">
         <fa
@@ -54,58 +54,75 @@
       </div>
 
       <!-- search bar -->
-      <div>
-        <div class="flex place-items-center bg-gray-100 rounded w-96">
-          <div class="pl-4 pr-2">
-            <fa icon="search" />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Search"
-              class="bg-gray-100 py-2 rounded outline-none"
-            />
-          </div>
+      <div class="flex place-items-center bg-gray-100 rounded w-60 lg:w-80">
+        <div class="pl-4 pr-2">
+          <fa icon="search" />
         </div>
-      </div>
-
-      <!-- actions -->
-      <div class="flex space-x-2">
-        <div
-          v-for="action in actions"
-          :key="action"
-          class="p-2 rounded hover:bg-gray-200"
-        >
-          <fa :icon="action" class="text-2xl" />
-        </div>
-      </div>
-
-      <!-- coins -->
-      <div
-        class="flex place-items-center rounded-full border border-solid border-yellow-300 px-4 py-2 space-x-2 bg-yellow-200 hover:bg-yellow-500"
-      >
-        <div
-          class="rounded-full px-2 bg-yellow-500 border-2 border-solid border-white font-black text-white"
-        >
-          C
-        </div>
-        <div>Free</div>
-      </div>
-
-      <!-- profile -->
-      <div
-        class="flex space-x-2 place-items-center rounded px-2 hover:bg-gray-200"
-      >
-        <img
-          src="../public/images/profile_pic.png"
-          alt=""
-          class="w-8 rounded"
+        <input
+          type="text"
+          placeholder="Search"
+          class="bg-gray-100 py-2 rounded outline-none"
         />
-        <div class="font-medium hidden md:block">
-          <div>@SuboptimalEng</div>
-          <div>1.8k karma</div>
+      </div>
+
+      <div class="flex xl:divide-x xl:divide-gray-200">
+        <!-- common options -->
+        <div class="hidden xl:block pr-2">
+          <div class="flex space-x-2">
+            <div
+              v-for="option in commonOptions"
+              :key="option"
+              class="p-2 rounded hover:bg-gray-200"
+            >
+              <fa :icon="option" class="text-2xl" />
+            </div>
+          </div>
         </div>
-        <fa icon="caret-down" />
+
+        <!-- actions -->
+        <div class="flex space-x-2 pl-2">
+          <div
+            v-for="action in actions"
+            :key="action"
+            class="p-2 rounded hover:bg-gray-200"
+          >
+            <fa :icon="action" class="text-2xl" />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex">
+        <!-- coins -->
+        <div
+          class="flex place-items-center rounded-full border border-solid border-yellow-300 px-4 py-2 space-x-2 bg-yellow-200 hover:bg-yellow-500"
+        >
+          <div
+            class="rounded-full px-2 bg-yellow-500 border-2 border-solid border-white font-black text-white"
+          >
+            C
+          </div>
+          <div>Free</div>
+        </div>
+        <!-- profile -->
+        <div
+          class="flex space-x-2 place-items-center rounded px-2 hover:bg-gray-200"
+        >
+          <img
+            src="../public/images/profile_pic.png"
+            alt=""
+            class="w-8 rounded flex-shrink-0"
+          />
+          <div class="text-sm font-medium hidden xl:block">
+            <div>@SuboptimalEng</div>
+            <div class="flex place-items-center space-x-1">
+              <div>
+                <fa icon="star" class="text-red-600" />
+              </div>
+              <div>1.8k karma</div>
+            </div>
+          </div>
+          <fa icon="caret-down" />
+        </div>
       </div>
     </div>
 
