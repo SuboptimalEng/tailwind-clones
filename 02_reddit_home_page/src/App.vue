@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-300 text-black">
+  <div class="bg-gray-200 text-black">
     <!-- navbar -->
     <div
       class="bg-white w-full fixed py-2 flex place-items-center justify-evenly space-x-2 shadow"
@@ -29,7 +29,7 @@
         <div class="relative">
           <div
             v-if="displayDropdown"
-            class="absolute bg-white rounded py-4 border border-solid border-gray-200 w-60"
+            class="absolute bg-white rounded py-4 border border-solid border-gray-200 w-60 z-10"
           >
             <div>
               <div class="px-6 py-2 text-xs font-bold text-gray-400">
@@ -108,7 +108,7 @@
           class="flex space-x-2 place-items-center rounded px-2 hover:bg-gray-200"
         >
           <img
-            src="../public/images/profile_pic.png"
+            src="/images/profile_pic.png"
             alt=""
             class="w-8 rounded flex-shrink-0"
           />
@@ -127,42 +127,41 @@
     </div>
 
     <!-- content -->
-    <div class="flex flex-col space-y-8 pt-16 h-auto">
-      <!-- trending -->
-      <div class="flex flex-col space-y-10">
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
+    <div class="flex flex-col pt-20 bg-gray-200 mx-auto min-h-screen max-w-6xl">
+      <div class="grid grid-cols-1 gap-y-10">
+        <div class="flex flex-col space-y-2">
+          <div class="font-medium">Trending Today</div>
+          <div class="flex space-x-4">
+            <div v-for="post in trending" v-bind:key="post.title">
+              <div class="relative z-auto">
+                <img
+                  :src="post.thumbnail"
+                  alt=""
+                  class="rounded-xl h-48 object-cover"
+                />
+                <div
+                  class="absolute top-0 rounded-xl w-full h-full bg-gradient-to-b from-transparent to-black"
+                ></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <div class="text-lg font-bold">{{ post.creator }}</div>
+                  <div class="font-bold">{{ post.title }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- content -->
+    </div>
+    <!-- <div class="flex flex-col space-y-8 pt-16 bg-gray-600">
       <div class="flex-row">
         <div class="flex flex-col">
-          <!-- filter -->
-          <!-- feed -->
           popular posts
           <div>filter</div>
           <div>feed</div>
         </div>
-        <div>
-          <!-- communities -->
-          communities
-        </div>
+        <div>communities</div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -196,6 +195,44 @@ export default {
       ],
       commonOptions: ['chart-line', 'globe', 'video'],
       actions: ['comment-dots', 'envelope', 'edit'],
+      trending: [
+        {
+          thumbnail: '/images/01.png',
+          video_length: '10:05',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Coding a Tinder for Memes with the Giphy API and Vue.js',
+          creator: '@SuboptimalEng',
+          views: '2.5k',
+          upload: '1 day ago',
+        },
+        {
+          thumbnail: '/images/02.png',
+          video_length: '08:50',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Getting Started with Vue.js, Vetur and Airbnb ESLint Config',
+          creator: '@SuboptimalEng',
+          views: '3k',
+          upload: '6 day ago',
+        },
+        {
+          thumbnail: '/images/03.png',
+          video_length: '09:42',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Coding a Todo App with Vue.js in 10 Minutes',
+          creator: '@SuboptimalEng',
+          views: '2k',
+          upload: '2 weeks ago',
+        },
+        {
+          thumbnail: '/images/04.png',
+          video_length: '08:08',
+          profile_pic: '/images/profile_pic.png',
+          title: 'Getting Started with Vim and Visual Studio Code',
+          creator: '@SuboptimalEng',
+          views: '10k',
+          upload: '2 months ago',
+        },
+      ],
     };
   },
 };
