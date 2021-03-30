@@ -14,11 +14,11 @@
       </div>
 
       <!-- subreddit dropdown -->
-      <div>
+      <div class="relative">
         <button
           type="button"
           v-on:click="displayDropdown = !displayDropdown"
-          class="flex place-items-center space-x-4 lg:space-x-32 p-2 rounded hover:bg-gray-200 focus:outline-none"
+          class="flex place-items-center space-x-4 lg:space-x-48 p-2 rounded hover:bg-gray-200 focus:outline-none"
         >
           <div class="flex place-items-center space-x-2">
             <fa icon="chart-line" class="text-blue-600 text-2xl" />
@@ -26,27 +26,22 @@
           </div>
           <fa icon="caret-down" />
         </button>
-        <div class="relative">
-          <div
-            v-if="displayDropdown"
-            class="absolute bg-white rounded py-4 border border-solid border-gray-200 w-60 z-10"
-          >
-            <div>
-              <div class="px-6 py-2 text-xs font-bold text-gray-400">
-                REDDIT FEEDS
-              </div>
-              <div
-                v-for="dropdownOption in dropdownOptions"
-                :key="dropdownOption.name"
-                class="flex place-items-center space-x-4 px-6 py-2 hover:bg-gray-200"
-              >
-                <fa
-                  :icon="dropdownOption.icon"
-                  class="text-blue-600 text-2xl"
-                />
-                <div>
-                  {{ dropdownOption.name }}
-                </div>
+        <div
+          v-if="displayDropdown"
+          class="absolute z-50 bg-white rounded py-4 border border-solid border-gray-200 w-80"
+        >
+          <div>
+            <div class="px-6 py-2 text-xs font-bold text-gray-400">
+              REDDIT FEEDS
+            </div>
+            <div
+              v-for="dropdownOption in dropdownOptions"
+              :key="dropdownOption.name"
+              class="flex place-items-center space-x-4 px-6 py-2 hover:bg-gray-200"
+            >
+              <fa :icon="dropdownOption.icon" class="text-blue-600 text-2xl" />
+              <div>
+                {{ dropdownOption.name }}
               </div>
             </div>
           </div>
@@ -127,26 +122,51 @@
     </div>
 
     <!-- content -->
-    <div class="flex flex-col pt-20 bg-gray-200 mx-auto min-h-screen max-w-6xl">
-      <div class="grid grid-cols-1 gap-y-10">
+    <div
+      class="flex flex-col pt-20 bg-gray-200 mx-auto min-h-screen max-w-5xl xl:max-w-6xl"
+    >
+      <div class="grid grid-cols-1 gap-y-6">
+        <!-- trending today -->
         <div class="flex flex-col space-y-2">
-          <div class="font-medium">Trending Today</div>
+          <div class="font-2xl font-medium">Trending Today</div>
           <div class="flex space-x-4">
             <div v-for="post in trending" v-bind:key="post.title">
-              <div class="relative z-auto">
+              <div class="relative z-0">
                 <img
                   :src="post.thumbnail"
                   alt=""
-                  class="rounded-xl h-48 object-cover"
+                  class="rounded-xl object-cover h-40 xl:h-48"
                 />
                 <div
-                  class="absolute top-0 rounded-xl w-full h-full bg-gradient-to-b from-transparent to-black"
+                  class="absolute top-0 w-full h-full rounded-xl bg-gradient-to-b from-transparent to-black"
                 ></div>
-                <div class="absolute bottom-4 left-4 right-4 text-white">
-                  <div class="text-lg font-bold">{{ post.creator }}</div>
-                  <div class="font-bold">{{ post.title }}</div>
+                <div class="absolute bottom-4 left-4 right-4 text-white z-0">
+                  <div class="text-sm xl:text-lg font-bold">
+                    {{ post.creator }}
+                  </div>
+                  <div class="text-sm xl:text-base font-bold overflow-hidden">
+                    {{ post.title }}
+                  </div>
                 </div>
               </div>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- popular posts -->
+        <div>
+          <div class="font-2xl font-medium">Popular Posts</div>
+          <div class="flex">
+            <div>
+              <!-- filter -->
+              <div class="border border-solid border-gray-400">filter</div>
+              <!-- posts -->
+              <div>posts</div>
+            </div>
+            <div>
+              <div>communities</div>
+              <!-- communities -->
             </div>
           </div>
         </div>
