@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-gray-200 text-black">
+  <div class="bg-gray-200 text-black relative">
     <!-- navbar -->
     <div
-      class="bg-white w-full fixed py-2 flex place-items-center justify-evenly space-x-2 shadow"
+      class="bg-white w-full fixed py-2 flex place-items-center justify-evenly space-x-2 shadow z-10"
     >
       <div class="flex text-3xl space-x-2 place-items-center">
         <fa
@@ -28,7 +28,7 @@
         </button>
         <div
           v-if="displayDropdown"
-          class="absolute z-50 bg-white rounded py-4 border border-solid border-gray-200 w-80"
+          class="absolute bg-white rounded py-4 border border-solid border-gray-200 w-80"
         >
           <div>
             <div class="px-6 py-2 text-xs font-bold text-gray-400">
@@ -123,7 +123,7 @@
 
     <!-- content -->
     <div
-      class="flex flex-col pt-20 bg-gray-200 mx-auto min-h-screen max-w-5xl xl:max-w-6xl"
+      class="flex flex-col pt-20 bg-gray-200 mx-auto min-h-screen max-w-4xl lg:max-w-5xl xl:max-w-6xl"
     >
       <div class="grid grid-cols-1 gap-y-6">
         <!-- trending today -->
@@ -131,7 +131,7 @@
           <div class="font-2xl font-medium">Trending Today</div>
           <div class="flex space-x-4">
             <div v-for="post in trending" v-bind:key="post.title">
-              <div class="relative z-0">
+              <div class="relative">
                 <img
                   :src="post.thumbnail"
                   alt=""
@@ -149,7 +149,6 @@
                   </div>
                 </div>
               </div>
-              <!-- </div> -->
             </div>
           </div>
         </div>
