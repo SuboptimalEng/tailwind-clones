@@ -1,4 +1,4 @@
-# 02_reddit
+# 02_reddit_home_page
 
 ## Project setup
 ```
