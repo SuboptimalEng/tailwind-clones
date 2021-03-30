@@ -2,13 +2,13 @@
   <div class="bg-gray-300 text-black">
     <!-- navbar -->
     <div
-      class="bg-white w-full fixed px-6 py-2 flex place-items-center justify-evenly"
+      class="bg-white w-full fixed py-2 flex place-items-center justify-evenly space-x-2 shadow"
     >
       <div class="flex text-3xl space-x-2">
         <fa
           :icon="['fab', 'reddit']"
           :style="{ color: 'FF5700' }"
-          class="bg-white text-4xl"
+          class="bg-white text-6xl"
         />
         <div class="font-medium hidden lg:block">reddit</div>
       </div>
