@@ -18,7 +18,7 @@
         <button
           type="button"
           v-on:click="displayDropdown = !displayDropdown"
-          class="flex place-items-center space-x-4 lg:space-x-48 p-2 rounded hover:bg-gray-200 focus:outline-none"
+          class="flex place-items-center space-x-4 xl:space-x-48 p-2 rounded hover:bg-gray-200 focus:outline-none"
         >
           <div class="flex place-items-center space-x-2">
             <fa icon="chart-line" class="text-blue-600 text-2xl" />
@@ -135,7 +135,7 @@
                 <img
                   :src="post.thumbnail"
                   alt=""
-                  class="rounded-xl object-cover h-40 xl:h-48"
+                  class="rounded-xl object-cover h-40 xl:h-48 shadow"
                 />
                 <div
                   class="absolute top-0 w-full h-full rounded-xl bg-gradient-to-b from-transparent to-black"
@@ -154,19 +154,52 @@
         </div>
 
         <!-- popular posts -->
-        <div>
+        <div class="flex flex-col space-y-2">
           <div class="font-2xl font-medium">Popular Posts</div>
-          <div class="flex">
-            <div>
-              <!-- filter -->
-              <div class="border border-solid border-gray-400">filter</div>
-              <!-- posts -->
-              <div>posts</div>
+          <div class="flex flex-col">
+            <div
+              class="flex place-items-center justify-between border border-solid border-gray-400 bg-white p-4 rounded shadow"
+            >
+              <div class="flex space-x-1 lg:space-x-4">
+                <div v-for="item in popularItems" :key="item.name">
+                  <div
+                    v-if="item.isBlue"
+                    class="text-blue-500 bg-gray-200 rounded-full px-4 py-2 font-black flex place-items-center space-x-2 hover:bg-gray-300"
+                  >
+                    <div v-if="item.icon">
+                      <fa :icon="item.icon" class="text-xl" />
+                    </div>
+                    <div>{{ item.name }}</div>
+                    <div v-if="item.caretDown">
+                      <fa icon="caret-down" />
+                    </div>
+                  </div>
+
+                  <div
+                    v-else
+                    class="text-gray-500 rounded-full p-2 font-black space-x-2 flex place-items-center hover:bg-gray-300"
+                  >
+                    <div v-if="item.icon">
+                      <fa :icon="item.icon" class="text-xl" />
+                    </div>
+                    <div>{{ item.name }}</div>
+                    <div v-if="item.caretDown">
+                      <fa icon="caret-down" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="text-blue-500 bg-gray-200 rounded-full px-4 py-2 font-black flex place-items-center space-x-2 hover:bg-gray-300"
+                >
+                  <fa icon="columns" class="text-xl" />
+                  <fa icon="caret-down" />
+                </div>
+              </div>
             </div>
-            <div>
-              <div>communities</div>
-              <!-- communities -->
-            </div>
+            <!-- posts -->
+            <div>posts</div>
           </div>
         </div>
       </div>
@@ -250,6 +283,35 @@ export default {
           creator: '@SuboptimalEng',
           views: '10k',
           upload: '2 months ago',
+        },
+      ],
+      popularItems: [
+        {
+          name: 'Hot',
+          icon: 'fire',
+          isBlue: true,
+        },
+        {
+          name: 'United States',
+          isBlue: true,
+          caretDown: true,
+        },
+        {
+          name: 'All',
+          isBlue: true,
+          caretDown: true,
+        },
+        {
+          name: 'New',
+          icon: 'certificate',
+        },
+        {
+          name: 'Top',
+          icon: 'sort-amount-up',
+        },
+        {
+          name: 'Rising',
+          icon: 'arrow-circle-up',
         },
       ],
     };
