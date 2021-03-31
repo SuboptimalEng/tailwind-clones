@@ -1,5 +1,10 @@
 <template>
-  <div class="bg-red-500">hi</div>
+  <div class="flex w-full h-full min-h-screen">
+    <div class="mx-auto my-auto text-6xl">
+      <fa icon="home" class="hover:text-gray-400" />
+      <fa :icon="['fab', 'youtube']" class="hover:text-gray-400" />
+    </div>
+  </div>
 </template>
 
 <script>
