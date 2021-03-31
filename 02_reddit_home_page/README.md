@@ -1,7 +1,7 @@
 # 02_reddit_home_page
 
 ## Sample UI
-![](/demos/02_reddit_home_page.png | width=250)
+<img src="/demos/02_reddit_home_page.png" width="250">
 
 ## Project setup
 ```
