@@ -2,7 +2,7 @@
   <div class="bg-gray-200 text-black relative">
     <!-- navbar -->
     <div
-      class="bg-white w-full fixed py-2 flex place-items-center justify-evenly space-x-2 shadow z-10"
+      class="bg-white w-full fixed py-2 px-2 flex place-items-center justify-evenly space-x-2 shadow z-10"
     >
       <div class="flex text-3xl space-x-2 place-items-center">
         <fa
@@ -156,7 +156,7 @@
         <!-- popular posts -->
         <div class="flex flex-col space-y-2">
           <div class="font-2xl font-medium">Popular Posts</div>
-          <div class="flex flex-col">
+          <div class="flex flex-col space-y-8">
             <div
               class="flex place-items-center justify-between border border-solid border-gray-400 bg-white p-4 rounded shadow"
             >
@@ -198,22 +198,60 @@
                 </div>
               </div>
             </div>
-            <!-- posts -->
-            <div>posts</div>
+            <div class="flex flex-col space-y-4">
+              <div v-for="post in posts" :key="post.title">
+                <div
+                  class="border border-solid border-gray-400 bg-white rounded shadow flex"
+                >
+                  <div
+                    class="flex flex-col place-items-center text-2xl p-2 bg-gray-100 justify-center"
+                  >
+                    <div>
+                      <fa icon="chevron-circle-up" class="text-red-500" />
+                    </div>
+                    <div class="text-red-500 font-bold">
+                      {{ post.upvotes }}
+                    </div>
+                    <div>
+                      <fa icon="chevron-circle-down" />
+                    </div>
+                  </div>
+                  <div class="flex flex-col pl-4">
+                    <div class="flex place-items-center space-x-2">
+                      <img
+                        :src="post.image"
+                        alt=""
+                        class="w-8 rounded-full py-2"
+                      />
+                      <div class="font-bold">{{ post.subreddit }}</div>
+                      <div class="font-thin text-gray-600">
+                        Posted by u/SuboptimalEng
+                        {{ post.date }}
+                      </div>
+                    </div>
+                    <div class="text-2xl font-medium">
+                      {{ post.title }}
+                    </div>
+                    <div class="flex text-gray-500 space-x-4">
+                      <div
+                        v-for="interaction in interactions"
+                        :key="interaction.icon"
+                        class="text-lg flex place-items-center space-x-2 p-2 hover:bg-gray-200"
+                      >
+                        <fa :icon="interaction.icon" />
+                        <div>
+                          {{ interaction.name }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="flex flex-col space-y-8 pt-16 bg-gray-600">
-      <div class="flex-row">
-        <div class="flex flex-col">
-          popular posts
-          <div>filter</div>
-          <div>feed</div>
-        </div>
-        <div>communities</div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -249,37 +287,37 @@ export default {
       actions: ['comment-dots', 'envelope', 'edit'],
       trending: [
         {
-          thumbnail: '/images/01.png',
+          thumbnail: '/images/clone.png',
           video_length: '10:05',
           profile_pic: '/images/profile_pic.png',
-          title: 'Coding a Tinder for Memes with the Giphy API and Vue.js',
+          title: 'Reddit UI Clone Built with Tailwind CSS',
           creator: '@SuboptimalEng',
           views: '2.5k',
           upload: '1 day ago',
         },
         {
-          thumbnail: '/images/02.png',
+          thumbnail: '/images/clone.png',
           video_length: '08:50',
           profile_pic: '/images/profile_pic.png',
-          title: 'Getting Started with Vue.js, Vetur and Airbnb ESLint Config',
+          title: 'Recreating the Reddit UI with Tailwind and Vue.js',
           creator: '@SuboptimalEng',
           views: '3k',
           upload: '6 day ago',
         },
         {
-          thumbnail: '/images/03.png',
+          thumbnail: '/images/clone.png',
           video_length: '09:42',
           profile_pic: '/images/profile_pic.png',
-          title: 'Coding a Todo App with Vue.js in 10 Minutes',
+          title: 'Coding a Reddit Clone with Tailwind CSS',
           creator: '@SuboptimalEng',
           views: '2k',
           upload: '2 weeks ago',
         },
         {
-          thumbnail: '/images/04.png',
+          thumbnail: '/images/clone.png',
           video_length: '08:08',
           profile_pic: '/images/profile_pic.png',
-          title: 'Getting Started with Vim and Visual Studio Code',
+          title: 'Simple Reddit UI Clone with Tailwind CSS and Vue 3',
           creator: '@SuboptimalEng',
           views: '10k',
           upload: '2 months ago',
@@ -312,6 +350,46 @@ export default {
         {
           name: 'Rising',
           icon: 'arrow-circle-up',
+        },
+      ],
+      posts: [
+        {
+          image: '/images/js.png',
+          upvotes: '6.9k',
+          subreddit: 'r/learnjavascript',
+          postedBy: '@SuboptimalEng',
+          date: '4 hrs ago',
+          title: 'I figured out how to clone the Reddit UI with Tailwind CSS!',
+        },
+        {
+          image: '/images/js.png',
+          upvotes: '4.2k',
+          subreddit: 'r/learnjavascript',
+          postedBy: '@SuboptimalEng',
+          date: '10 hrs ago',
+          title: 'How do I clone the Reddit UI with Tailwind CSS?',
+        },
+      ],
+      interactions: [
+        {
+          name: 'Comments',
+          icon: 'comment',
+        },
+        {
+          name: 'Award',
+          icon: 'trophy',
+        },
+        {
+          name: 'Share',
+          icon: 'share',
+        },
+        {
+          name: 'Save',
+          icon: 'bookmark',
+        },
+        {
+          name: '',
+          icon: 'ellipsis-h',
         },
       ],
     };
