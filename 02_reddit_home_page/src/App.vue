@@ -125,7 +125,7 @@
     <div
       class="flex flex-col pt-20 bg-gray-200 mx-auto min-h-screen max-w-4xl lg:max-w-5xl xl:max-w-6xl"
     >
-      <div class="grid grid-cols-1 gap-y-6">
+      <div class="grid grid-cols-1 gap-y-4">
         <!-- trending today -->
         <div class="flex flex-col space-y-2">
           <div class="font-2xl font-medium">Trending Today</div>
@@ -156,7 +156,7 @@
         <!-- popular posts -->
         <div class="flex flex-col space-y-2">
           <div class="font-2xl font-medium">Popular Posts</div>
-          <div class="flex flex-col space-y-8">
+          <div class="flex flex-col space-y-4">
             <div
               class="flex place-items-center justify-between border border-solid border-gray-400 bg-white p-4 rounded shadow"
             >
@@ -229,7 +229,7 @@
                         {{ post.date }}
                       </div>
                     </div>
-                    <div class="text-2xl font-medium">
+                    <div class="text-2xl font-bold">
                       {{ post.title }}
                     </div>
                     <div class="flex text-gray-500 space-x-4">
@@ -359,7 +359,7 @@ export default {
           subreddit: 'r/learnjavascript',
           postedBy: '@SuboptimalEng',
           date: '4 hrs ago',
-          title: 'How to clone the Reddit UI with Tailwind CSS',
+          title: 'How to Clone the Reddit UI with Tailwind CSS',
         },
         {
           image: '/images/js.png',
