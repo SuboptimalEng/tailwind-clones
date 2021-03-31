@@ -1,8 +1,5 @@
 # 02_reddit_home_page
 
-## Sample UI
-<img src="/demos/02_reddit_home_page.png" width="250">
-
 ## Project setup
 ```
 npm install

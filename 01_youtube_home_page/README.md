@@ -1,8 +1,5 @@
 # 01_youtube_home_page
 
-## Sample UI
-![](/demos/01_youtube_home_page.png)
-
 ## Project setup
 ```
 npm install
