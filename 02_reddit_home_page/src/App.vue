@@ -198,7 +198,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-col space-y-4">
+            <div class="flex flex-col space-y-4 pb-8">
               <div v-for="post in posts" :key="post.title">
                 <div
                   class="border border-solid border-gray-400 bg-white rounded shadow flex"
@@ -359,7 +359,7 @@ export default {
           subreddit: 'r/learnjavascript',
           postedBy: '@SuboptimalEng',
           date: '4 hrs ago',
-          title: 'I figured out how to clone the Reddit UI with Tailwind CSS!',
+          title: 'How to clone the Reddit UI with Tailwind CSS',
         },
         {
           image: '/images/js.png',
@@ -367,7 +367,15 @@ export default {
           subreddit: 'r/learnjavascript',
           postedBy: '@SuboptimalEng',
           date: '10 hrs ago',
-          title: 'How do I clone the Reddit UI with Tailwind CSS?',
+          title: 'Cracking the YouTube Algorithm with Suboptimal UI Clones',
+        },
+        {
+          image: '/images/js.png',
+          upvotes: '1.1k',
+          subreddit: 'r/learnjavascript',
+          postedBy: '@SuboptimalEng',
+          date: '10 hrs ago',
+          title: 'Tech Coding Interviews are Kinda Sus',
         },
       ],
       interactions: [
