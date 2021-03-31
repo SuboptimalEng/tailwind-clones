@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <div class="bg-red-500">hi</div>
 </template>
 
 <script>
