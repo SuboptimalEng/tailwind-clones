@@ -4,6 +4,7 @@
     <div
       class="bg-white w-full fixed py-2 px-2 flex place-items-center justify-evenly space-x-2 shadow z-10"
     >
+      <!-- logo -->
       <div class="flex text-3xl space-x-2 place-items-center">
         <fa
           :icon="['fab', 'reddit']"
@@ -15,6 +16,7 @@
 
       <!-- subreddit dropdown -->
       <div class="relative">
+        <!-- subreddit search dropdown -->
         <button
           type="button"
           v-on:click="displayDropdown = !displayDropdown"
@@ -26,6 +28,8 @@
           </div>
           <fa icon="caret-down" />
         </button>
+
+        <!-- reddit feeds -->
         <div
           v-if="displayDropdown"
           class="absolute bg-white rounded py-4 border border-solid border-gray-200 w-80"
@@ -60,8 +64,8 @@
         />
       </div>
 
+      <!-- common actions -->
       <div class="flex xl:divide-x xl:divide-gray-200">
-        <!-- common options -->
         <div class="hidden xl:block pr-2">
           <div class="flex space-x-2">
             <div
@@ -74,7 +78,6 @@
           </div>
         </div>
 
-        <!-- actions -->
         <div class="flex space-x-2 pl-2">
           <div
             v-for="action in actions"
@@ -98,6 +101,7 @@
           </div>
           <div>Free</div>
         </div>
+
         <!-- profile -->
         <div
           class="flex space-x-2 place-items-center rounded px-2 hover:bg-gray-200"
@@ -157,6 +161,7 @@
         <div class="flex flex-col space-y-2">
           <div class="font-2xl font-medium">Popular Posts</div>
           <div class="flex flex-col space-y-4">
+            <!-- filter -->
             <div
               class="flex place-items-center justify-between border border-solid border-gray-400 bg-white p-4 rounded shadow"
             >
@@ -198,6 +203,8 @@
                 </div>
               </div>
             </div>
+
+            <!-- reddit posts -->
             <div class="flex flex-col space-y-4 pb-8">
               <div v-for="post in posts" :key="post.title">
                 <div
