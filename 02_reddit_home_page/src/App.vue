@@ -1,17 +1,23 @@
 <template>
-  <div class="bg-gray-200 text-black relative">
+  <div class="min-h-screen bg-gray-200 text-gray-900">
     <!-- navbar -->
     <div
-      class="bg-white w-full fixed py-2 px-2 flex place-items-center justify-evenly space-x-2 shadow z-10"
+      class="bg-white w-full fixed p-2 mt-36 flex place-items-center justify-evenly space-x-2 shadow z-10 border border-black"
     >
       <!-- logo -->
-      <div class="flex text-3xl space-x-2 place-items-center">
+      <div
+        class="flex text-3xl space-x-2 place-items-center border border-black"
+      >
         <fa
           :icon="['fab', 'reddit']"
           :style="{ color: 'FF5700' }"
           class="bg-white text-4xl"
         />
-        <div class="font-medium hidden lg:block">reddit</div>
+        <div
+          class="font-medium hidden lg:block border border-black bg-gray-600"
+        >
+          reddit
+        </div>
       </div>
 
       <!-- subreddit dropdown -->
@@ -20,13 +26,17 @@
         <button
           type="button"
           v-on:click="displayDropdown = !displayDropdown"
-          class="flex place-items-center space-x-4 xl:space-x-48 p-2 rounded hover:bg-gray-200 focus:outline-none"
+          class="flex place-items-center space-x-4 xl:space-x-48 p-2 rounded hover:bg-gray-200 focus:outline-none border border-black"
         >
           <div class="flex place-items-center space-x-2">
             <fa icon="chart-line" class="text-blue-600 text-2xl" />
-            <div class="text-xl font-medium hidden md:block">Popular</div>
+            <div
+              class="text-xl font-medium hidden md:block border border-black bg-gray-600"
+            >
+              Popular
+            </div>
           </div>
-          <fa icon="caret-down" />
+          <fa icon="caret-down" class="border border-black" />
         </button>
 
         <!-- reddit feeds -->
@@ -53,36 +63,38 @@
       </div>
 
       <!-- search bar -->
-      <div class="flex place-items-center bg-gray-100 rounded w-60 lg:w-80">
+      <div
+        class="flex place-items-center rounded w-60 lg:w-80 border border-black bg-gray-600"
+      >
         <div class="pl-4 pr-2">
           <fa icon="search" />
         </div>
         <input
           type="text"
           placeholder="Search"
-          class="bg-gray-100 py-2 rounded outline-none"
+          class="bg-gray-600 py-2 rounded outline-none"
         />
       </div>
 
       <!-- common actions -->
-      <div class="flex xl:divide-x xl:divide-gray-200">
-        <div class="hidden xl:block pr-2">
+      <div class="flex xl:divide-x xl:divide-gray-200 border border-black">
+        <div class="hidden xl:block pr-2 border border-black bg-gray-600">
           <div class="flex space-x-2">
             <div
               v-for="option in commonOptions"
               :key="option"
-              class="p-2 rounded hover:bg-gray-200"
+              class="p-2 rounded hover:bg-gray-200 border border-black"
             >
               <fa :icon="option" class="text-2xl" />
             </div>
           </div>
         </div>
 
-        <div class="flex space-x-2 pl-2">
+        <div class="flex space-x-2 pl-2 border border-black">
           <div
             v-for="action in actions"
             :key="action"
-            class="p-2 rounded hover:bg-gray-200"
+            class="p-2 rounded hover:bg-gray-200 border border-black"
           >
             <fa :icon="action" class="text-2xl" />
           </div>
@@ -104,14 +116,16 @@
 
         <!-- profile -->
         <div
-          class="flex space-x-2 place-items-center rounded px-2 hover:bg-gray-200"
+          class="flex space-x-2 place-items-center rounded px-2 hover:bg-gray-200 border border-black"
         >
           <img
             src="/images/profile_pic.png"
             alt=""
             class="w-8 rounded flex-shrink-0"
           />
-          <div class="text-sm font-medium hidden xl:block">
+          <div
+            class="text-sm font-medium hidden xl:block border border-black bg-gray-600"
+          >
             <div>@SuboptimalEng</div>
             <div class="flex place-items-center space-x-1">
               <div>
@@ -121,141 +135,6 @@
             </div>
           </div>
           <fa icon="caret-down" />
-        </div>
-      </div>
-    </div>
-
-    <!-- content -->
-    <div
-      class="flex flex-col pt-20 bg-gray-200 mx-auto min-h-screen max-w-4xl lg:max-w-5xl xl:max-w-6xl"
-    >
-      <div class="grid grid-cols-1 gap-y-4">
-        <!-- trending today -->
-        <div class="flex flex-col space-y-2">
-          <div class="font-2xl font-medium">Trending Today</div>
-          <div class="flex space-x-4">
-            <div v-for="post in trending" v-bind:key="post.title">
-              <div class="relative">
-                <img
-                  :src="post.thumbnail"
-                  alt=""
-                  class="rounded-xl object-cover h-40 xl:h-48 shadow"
-                />
-                <div
-                  class="absolute top-0 w-full h-full rounded-xl bg-gradient-to-b from-transparent to-black"
-                ></div>
-                <div class="absolute bottom-4 left-4 right-4 text-white z-0">
-                  <div class="text-sm xl:text-lg font-bold">
-                    {{ post.creator }}
-                  </div>
-                  <div class="text-sm xl:text-base font-bold overflow-hidden">
-                    {{ post.title }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- popular posts -->
-        <div class="flex flex-col space-y-2">
-          <div class="font-2xl font-medium">Popular Posts</div>
-          <div class="flex flex-col space-y-4">
-            <!-- filter -->
-            <div
-              class="flex place-items-center justify-between border border-solid border-gray-400 bg-white p-4 rounded shadow"
-            >
-              <div class="flex space-x-1 lg:space-x-4">
-                <div v-for="item in popularItems" :key="item.name">
-                  <div
-                    v-if="item.isBlue"
-                    class="text-blue-500 bg-gray-200 rounded-full px-4 py-2 font-black flex place-items-center space-x-2 hover:bg-gray-300"
-                  >
-                    <div v-if="item.icon">
-                      <fa :icon="item.icon" class="text-xl" />
-                    </div>
-                    <div>{{ item.name }}</div>
-                    <div v-if="item.caretDown">
-                      <fa icon="caret-down" />
-                    </div>
-                  </div>
-
-                  <div
-                    v-else
-                    class="text-gray-500 rounded-full p-2 font-black space-x-2 flex place-items-center hover:bg-gray-300"
-                  >
-                    <div v-if="item.icon">
-                      <fa :icon="item.icon" class="text-xl" />
-                    </div>
-                    <div>{{ item.name }}</div>
-                    <div v-if="item.caretDown">
-                      <fa icon="caret-down" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="text-blue-500 bg-gray-200 rounded-full px-4 py-2 font-black flex place-items-center space-x-2 hover:bg-gray-300"
-                >
-                  <fa icon="columns" class="text-xl" />
-                  <fa icon="caret-down" />
-                </div>
-              </div>
-            </div>
-
-            <!-- reddit posts -->
-            <div class="flex flex-col space-y-4 pb-8">
-              <div v-for="post in posts" :key="post.title">
-                <div
-                  class="border border-solid border-gray-400 bg-white rounded shadow flex"
-                >
-                  <div
-                    class="flex flex-col place-items-center text-2xl p-2 bg-gray-100 justify-center"
-                  >
-                    <div>
-                      <fa icon="chevron-circle-up" class="text-red-500" />
-                    </div>
-                    <div class="text-red-500 font-bold">
-                      {{ post.upvotes }}
-                    </div>
-                    <div>
-                      <fa icon="chevron-circle-down" />
-                    </div>
-                  </div>
-                  <div class="flex flex-col pl-4">
-                    <div class="flex place-items-center space-x-2">
-                      <img
-                        :src="post.image"
-                        alt=""
-                        class="w-8 rounded-full py-2"
-                      />
-                      <div class="font-bold">{{ post.subreddit }}</div>
-                      <div class="font-thin text-gray-600">
-                        Posted by u/SuboptimalEng
-                        {{ post.date }}
-                      </div>
-                    </div>
-                    <div class="text-2xl font-bold">
-                      {{ post.title }}
-                    </div>
-                    <div class="flex text-gray-500 space-x-4">
-                      <div
-                        v-for="interaction in interactions"
-                        :key="interaction.icon"
-                        class="text-lg flex place-items-center space-x-2 p-2 hover:bg-gray-200"
-                      >
-                        <fa :icon="interaction.icon" />
-                        <div>
-                          {{ interaction.name }}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
