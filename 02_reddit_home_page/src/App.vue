@@ -139,7 +139,7 @@
                 <img
                   :src="post.thumbnail"
                   alt=""
-                  class="rounded-xl object-cover h-40 xl:h-48 shadow"
+                  class="rounded-xl object-cover h-36 xl:h-48 shadow"
                 />
                 <div
                   class="absolute top-0 w-full h-full rounded-xl bg-gradient-to-b from-transparent to-black"
@@ -294,37 +294,37 @@ export default {
       actions: ['comment-dots', 'envelope', 'edit'],
       trending: [
         {
-          thumbnail: '/images/clone.png',
+          thumbnail: '/images/01.png',
           video_length: '10:05',
           profile_pic: '/images/profile_pic.png',
-          title: 'Reddit UI Clone Built with Tailwind CSS',
+          title: 'Vue CLI Setup Guide with Tailwind CSS',
           creator: '@SuboptimalEng',
           views: '2.5k',
           upload: '1 day ago',
         },
         {
-          thumbnail: '/images/clone.png',
+          thumbnail: '/images/02.png',
           video_length: '08:50',
           profile_pic: '/images/profile_pic.png',
-          title: 'Recreating the Reddit UI with Tailwind and Vue.js',
+          title: 'Getting Started with Vim and VS Code',
           creator: '@SuboptimalEng',
           views: '3k',
           upload: '6 day ago',
         },
         {
-          thumbnail: '/images/clone.png',
+          thumbnail: '/images/03.png',
           video_length: '09:42',
           profile_pic: '/images/profile_pic.png',
-          title: 'Coding a Reddit Clone with Tailwind CSS',
+          title: 'Productive Mac OS Setup with Vim, iTerm2, and Oh My Zsh',
           creator: '@SuboptimalEng',
           views: '2k',
           upload: '2 weeks ago',
         },
         {
-          thumbnail: '/images/clone.png',
+          thumbnail: '/images/04.png',
           video_length: '08:08',
           profile_pic: '/images/profile_pic.png',
-          title: 'Simple Reddit UI Clone with Tailwind CSS and Vue 3',
+          title: 'Vue.js Setup Guide in VS Code with Vetur & Airbnb ESLint',
           creator: '@SuboptimalEng',
           views: '10k',
           upload: '2 months ago',
