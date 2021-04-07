@@ -31,7 +31,7 @@
           <div class="flex place-items-center space-x-2">
             <fa icon="chart-line" class="text-blue-600 text-2xl" />
             <div
-              class="text-xl font-medium hidden md:block border border-black bg-gray-600"
+              class="font-medium text-xl md:text-6xl border border-black bg-gray-600"
             >
               Popular
             </div>
