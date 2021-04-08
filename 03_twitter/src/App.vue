@@ -2,21 +2,29 @@
   <div :class="isDark ? 'dark' : ''">
     <div class="min-h-screen bg-eelg dark:bg-tb">
       <div
-        class="flex justify-around divide-x-2 text-3xl text-black pl-32 2xl:pl-0 dark:text-eelg"
+        class="flex justify-around divide-x divide-black text-4xl text-black pl-32 2xl:pl-0 dark:divide-eelg dark:text-eelg"
       >
-        <!-- left -->
+        <!-- navbar -->
         <div
-          class="px-4 flex flex-col justify-between max-h-screen top-0 bottom-0 left-0 fixed"
+          class="px-4 ml-32 2xl:mx-auto flex flex-col justify-between max-h-screen top-0 bottom-0 left-0 fixed"
         >
           <div>
             <div v-for="item in leftNavbarItems" :key="item.icon">
               <button
-                class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+                class="flex p-4 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
               >
                 <div class="2xl:w-16">
-                  <fa :icon="item.icon" />
+                  <div
+                    v-if="item.blueInLightMode"
+                    class="text-blue dark:text-eelg"
+                  >
+                    <fa :icon="item.icon" />
+                  </div>
+                  <div v-else>
+                    <fa :icon="item.icon" />
+                  </div>
                 </div>
-                <div v-if="item.text" class="font-black hidden 2xl:flex">
+                <div v-if="item.text" class="font-bold hidden 2xl:flex">
                   {{ item.text }}
                 </div>
               </button>
@@ -24,18 +32,18 @@
 
             <button
               @click="isDark = !isDark"
-              class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex p-4 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
               <div class="2xl:w-16">
                 <fa v-if="isDark" :icon="['fas', 'toggle-on']" />
                 <fa v-else :icon="['fas', 'toggle-off']" />
               </div>
-              <div class="font-black hidden 2xl:flex">Dark Mode</div>
+              <div class="font-bold hidden 2xl:flex">Dark Mode</div>
             </button>
 
             <!-- class="flex w-24 p-5 mt-2 rounded-full bg-blue focus:outline-none 2xl:w-full" -->
             <button
-              class="flex p-5 mt-2 mx-auto bg-blue rounded-full 2xl:w-full focus:outline-none"
+              class="flex p-4 mt-2 mx-auto bg-blue rounded-full 2xl:w-full focus:outline-none"
             >
               <div class="2xl:hidden">
                 <fa :icon="['fas', 'feather-alt']" class="text-eelg" />
@@ -50,7 +58,7 @@
 
           <div class="pb-4">
             <button
-              class="flex p-5 space-x-2 rounded-full place-items-center text-2xl 2xl:w-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex p-4 space-x-2 rounded-full place-items-center text-2xl 2xl:w-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
               <div class="w-16">
                 <div class="px-auto">
@@ -73,19 +81,48 @@
         </div>
 
         <!-- content -->
-        <!-- <div class="min-h-screen flex-grow">content</div> -->
-        <!-- <div class="ml-64 2xl:ml-506px min-h-screen flex-grow"> -->
-        <!-- <div class="2xl:ml-392px min-h-screen flex-grow"> -->
-        <div class="2xl:ml-392px min-h-screen flex-grow">
-          content
-          <div v-for="tweet in tweets" :key="tweet" class="h-60 w-60 m-auto">
-            hi
+        <div
+          class="min-h-screen flex flex-col flex-grow divide-y divide-eeelg ml-32 2xl:ml-392px"
+        >
+          <!-- back -->
+          <div class="flex place-items-center w-full py-2">
+            <div class="mx-10 text-blue">
+              <fa :icon="['fas', 'arrow-left']" class="" />
+            </div>
+            <div class="text-3xl flex flex-col text-black dark:text-eelg">
+              <div class="flex place-items-center space-x-2">
+                <div class="font-black">Elon Musk</div>
+                <div class="text-blue dark:text-eelg">
+                  <fa :icon="['fas', 'check-circle']" />
+                </div>
+              </div>
+              <div class="text-xl">6.9k Tweets</div>
+            </div>
+          </div>
+
+          <!-- profile -->
+          <div class="w-full">
+            <div class="relative">
+              <div class="bg-dg h-72">.</div>
+              <div class="bg-eelg h-52 w-52 absolute top-2/3 left-4">
+                <div class="text-black">.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- tweets -->
+          <div>
+            <div v-for="tweet in tweets" :key="tweet" class="h-60 w-60 m-auto">
+              hi
+            </div>
           </div>
         </div>
 
         <!-- right -->
         <!-- <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div> -->
-        <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div>
+        <div class="min-h-screen hidden 2xl:flex 2xl:flex-shrink 2xl:w-96">
+          right
+        </div>
       </div>
     </div>
   </div>
@@ -99,6 +136,7 @@ export default {
       isDark: true,
       leftNavbarItems: [
         {
+          blueInLightMode: true,
           icon: ['fab', 'twitter'],
         },
         {
