@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       margin: {
+        '392px': '392px',
         '506px': '506px',
       },
     },

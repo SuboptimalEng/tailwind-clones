@@ -2,16 +2,16 @@
   <div :class="isDark ? 'dark' : ''">
     <div class="min-h-screen bg-eelg dark:bg-tb">
       <div
-        class="flex justify-around divide-x-2 text-4xl text-black dark:text-eelg"
+        class="flex justify-around divide-x-2 text-3xl text-black pl-32 2xl:pl-0 dark:text-eelg"
       >
         <!-- left -->
         <div
-          class="px-4 pl-32 flex flex-col justify-between max-h-screen top-0 bottom-0 left-0 fixed"
+          class="px-4 flex flex-col justify-between max-h-screen top-0 bottom-0 left-0 fixed"
         >
           <div>
             <div v-for="item in leftNavbarItems" :key="item.icon">
               <button
-                class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-8 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+                class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
               >
                 <div class="2xl:w-16">
                   <fa :icon="item.icon" />
@@ -24,7 +24,7 @@
 
             <button
               @click="isDark = !isDark"
-              class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-8 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex p-4 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
               <div class="2xl:w-16">
                 <fa v-if="isDark" :icon="['fas', 'toggle-on']" />
@@ -52,19 +52,21 @@
             <button
               class="flex p-5 space-x-2 rounded-full place-items-center text-2xl 2xl:w-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
-              <div class="w-20">
-                <img
-                  src="/images/profile_pic.png"
-                  alt=""
-                  class="rounded-full"
-                />
+              <div class="w-16">
+                <div class="px-auto">
+                  <img
+                    src="/images/profile_pic.png"
+                    alt=""
+                    class="rounded-full"
+                  />
+                </div>
               </div>
-              <div class="flex flex-col">
-                <div class="font-bold hidden 2xl:flex">Suboptimal Eng...</div>
-                <div class="font-thin hidden 2xl:flex">@SuboptimalEng</div>
+              <div class="hidden 2xl:flex 2xl:flex-col">
+                <div class="font-bold">Suboptimal Eng...</div>
+                <div class="font-thin">@SuboptimalEng</div>
               </div>
-              <div>
-                <fa :icon="['fas', 'ellipsis-h']" class="hidden 2xl:flex" />
+              <div class="hidden 2xl:flex">
+                <fa :icon="['fas', 'ellipsis-h']" class="" />
               </div>
             </button>
           </div>
@@ -72,7 +74,9 @@
 
         <!-- content -->
         <!-- <div class="min-h-screen flex-grow">content</div> -->
-        <div class="ml-64 2xl:ml-506px min-h-screen flex-grow">
+        <!-- <div class="ml-64 2xl:ml-506px min-h-screen flex-grow"> -->
+        <!-- <div class="2xl:ml-392px min-h-screen flex-grow"> -->
+        <div class="2xl:ml-392px min-h-screen flex-grow">
           content
           <div v-for="tweet in tweets" :key="tweet" class="h-60 w-60 m-auto">
             hi
