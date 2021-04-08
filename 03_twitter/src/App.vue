@@ -1,9 +1,13 @@
 <template>
   <div :class="isDark ? 'dark' : ''">
     <div class="min-h-screen bg-eelg dark:bg-tb">
-      <div class="flex divide-x-2 text-4xl text-black dark:text-eelg">
+      <div
+        class="flex justify-around divide-x-2 text-4xl text-black dark:text-eelg"
+      >
         <!-- left -->
-        <div class="px-4 flex flex-col justify-between">
+        <div
+          class="px-4 pl-32 flex flex-col justify-between max-h-screen static"
+        >
           <div>
             <div v-for="item in leftNavbarItems" :key="item.icon">
               <button
@@ -45,23 +49,37 @@
 
           <div class="pb-4">
             <button
-              class="flex p-6 space-x-8 rounded-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex w-full p-5 justify-between rounded-full place-items-center text-2xl focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
-              <!-- <div class="w-16">
-                <img :icon="item.icon" />
-              </div> -->
-              <!-- <div v-if="item.text" class="font-black hidden 2xl:flex">
-                {{ item.text }}
-              </div> -->
+              <div class="w-16">
+                <img
+                  src="/images/profile_pic.png"
+                  alt=""
+                  class="rounded-full"
+                />
+              </div>
+              <div class="flex flex-col">
+                <div class="font-bold hidden 2xl:flex">Suboptimal Eng...</div>
+                <div class="font-thin hidden 2xl:flex">@SuboptimalEng</div>
+              </div>
+              <div>
+                <fa :icon="['fas', 'ellipsis-h']" />
+              </div>
             </button>
           </div>
         </div>
 
         <!-- content -->
-        <div class="min-h-screen flex-grow">content</div>
+        <!-- <div class="min-h-screen flex-grow">content</div> -->
+        <div class="min-h-screen flex-grow">
+          <div v-for="tweet in tweets" :key="tweet" class="h-60 w-60 m-auto">
+            hi
+          </div>
+        </div>
 
         <!-- right -->
-        <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div>
+        <!-- <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div> -->
+        <div class="min-h-screen hidden 2xl:flex">right</div>
       </div>
     </div>
   </div>
@@ -105,6 +123,18 @@ export default {
           text: 'Profile',
           icon: ['fas', 'user'],
         },
+      ],
+      tweets: [
+        'hi',
+        'hi',
+        'hi',
+        'hi',
+        'hi',
+        'hi',
+        'hi',
+        'hi',
+        'hi',
+        'hi',
       ],
     };
   },
