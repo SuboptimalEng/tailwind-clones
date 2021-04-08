@@ -24,7 +24,7 @@
 
             <button
               @click="isDark = !isDark"
-              class="flex p-4 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-4 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
               <div class="2xl:w-16">
                 <fa v-if="isDark" :icon="['fas', 'toggle-on']" />
