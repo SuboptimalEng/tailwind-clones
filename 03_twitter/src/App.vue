@@ -11,9 +11,9 @@
           <div>
             <div v-for="item in leftNavbarItems" :key="item.icon">
               <button
-                class="flex p-6 space-x-8 rounded-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+                class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-8 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
               >
-                <div class="w-16">
+                <div class="2xl:w-16">
                   <fa :icon="item.icon" />
                 </div>
                 <div v-if="item.text" class="font-black hidden 2xl:flex">
@@ -24,34 +24,35 @@
 
             <button
               @click="isDark = !isDark"
-              class="flex p-5 space-x-8 rounded-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex p-5 rounded-full mx-auto 2xl:mx-0 2xl:space-x-8 focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
-              <div class="w-16">
+              <div class="2xl:w-16">
                 <fa v-if="isDark" :icon="['fas', 'toggle-on']" />
                 <fa v-else :icon="['fas', 'toggle-off']" />
               </div>
               <div class="font-black hidden 2xl:flex">Mode</div>
             </button>
 
+            <!-- class="flex w-24 p-5 mt-2 rounded-full bg-blue focus:outline-none 2xl:w-full" -->
             <button
-              class="flex w-full p-5 mt-2 space-x-8 rounded-full bg-blue focus:outline-none"
+              class="flex p-5 mt-2 mx-auto bg-blue rounded-full 2xl:w-full focus:outline-none"
             >
-              <div class="mx-auto">
-                <div class="flex 2xl:hidden">
-                  <fa :icon="['fas', 'feather-alt']" />
-                </div>
-                <div class="text-2xl font-black text-eelg hidden 2xl:flex">
-                  Tweet
-                </div>
+              <div class="2xl:hidden">
+                <fa :icon="['fas', 'feather-alt']" class="text-eelg" />
+              </div>
+              <div
+                class="mx-auto text-2xl content-center font-black text-eelg hidden 2xl:flex"
+              >
+                Tweet
               </div>
             </button>
           </div>
 
           <div class="pb-4">
             <button
-              class="flex w-full p-5 justify-between rounded-full place-items-center text-2xl focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex p-5 justify-between rounded-full place-items-center text-2xl 2xl:w-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
-              <div class="w-16">
+              <div class="w-20">
                 <img
                   src="/images/profile_pic.png"
                   alt=""
@@ -63,7 +64,7 @@
                 <div class="font-thin hidden 2xl:flex">@SuboptimalEng</div>
               </div>
               <div>
-                <fa :icon="['fas', 'ellipsis-h']" />
+                <fa :icon="['fas', 'ellipsis-h']" class="hidden 2xl:flex" />
               </div>
             </button>
           </div>
@@ -71,7 +72,7 @@
 
         <!-- content -->
         <!-- <div class="min-h-screen flex-grow">content</div> -->
-        <div class="ml-506px min-h-screen flex-grow">
+        <div class="ml-64 2xl:ml-506px min-h-screen flex-grow">
           content
           <div v-for="tweet in tweets" :key="tweet" class="h-60 w-60 m-auto">
             hi
@@ -80,7 +81,7 @@
 
         <!-- right -->
         <!-- <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div> -->
-        <div class="min-h-screen hidden 2xl:flex">right</div>
+        <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div>
       </div>
     </div>
   </div>
@@ -125,18 +126,7 @@ export default {
           icon: ['fas', 'user'],
         },
       ],
-      tweets: [
-        'hi',
-        'hi',
-        'hi',
-        'hi',
-        'hi',
-        'hi',
-        'hi',
-        'hi',
-        'hi',
-        'hi',
-      ],
+      tweets: ['hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi'],
     };
   },
 };
