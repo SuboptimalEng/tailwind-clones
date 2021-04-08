@@ -2,7 +2,7 @@
   <div :class="isDark ? 'dark' : ''">
     <div class="min-h-screen bg-eelg dark:bg-tb">
       <div
-        class="flex justify-around divide-x divide-black text-4xl text-black pl-32 2xl:pl-0 dark:divide-eelg dark:text-eelg"
+        class="flex justify-around divide-x text-4xl text-black pl-32 2xl:pl-0 dark:divide-eelg dark:text-eelg"
       >
         <!-- navbar -->
         <div
@@ -86,7 +86,9 @@
         >
           <!-- back -->
           <div class="flex place-items-center w-full py-2">
-            <div class="mx-10 text-blue">
+            <div
+              class="mx-4 p-5 rounded-full text-blue hover:text-blue hover:bg-blue hover:bg-opacity-20"
+            >
               <fa :icon="['fas', 'arrow-left']" class="" />
             </div>
             <div class="text-3xl flex flex-col text-black dark:text-eelg">
@@ -102,11 +104,82 @@
 
           <!-- profile -->
           <div class="w-full">
+            <!-- profile: pic -->
             <div class="relative">
               <div class="bg-dg h-72">.</div>
-              <div class="bg-eelg h-52 w-52 absolute top-2/3 left-4">
-                <div class="text-black">.</div>
+              <div
+                class="absolute rounded-full bg-eelg dark:bg-dg h-48 w-48 top-2/3 left-4"
+              >
+                <div class="h-44 w-44 m-2">
+                  <img
+                    src="/images/profile_pic.png"
+                    alt=""
+                    class="rounded-full"
+                  />
+                </div>
               </div>
+            </div>
+
+            <!-- profile: notifs -->
+            <div class="flex bg-blue justify-end mt-4">
+              <div class="">hi</div>
+            </div>
+
+            <!-- profile: name -->
+            <div class="pt-14 pl-5 flex flex-col space-y-4">
+              <div>
+                <div class="flex place-items-center space-x-2">
+                  <div class="font-black">{{ user.name }}</div>
+                  <div class="text-blue dark:text-eelg">
+                    <fa :icon="['fas', 'check-circle']" />
+                  </div>
+                </div>
+                <div class="text-2xl text-dg">{{ user.handle }}</div>
+              </div>
+
+              <!-- profile: info -->
+              <div class="text-xl">
+                {{ user.description }}
+              </div>
+
+              <!-- profile: join -->
+              <div class="flex text-xl text-dg space-x-2">
+                <div>
+                  <fa :icon="['fas', 'calendar']" />
+                </div>
+                <div>
+                  {{ user.date }}
+                </div>
+              </div>
+
+              <!-- profile: followers -->
+              <div class="flex text-2xl text-dg space-x-4">
+                <div class="flex space-x-2">
+                  <div class="font-bold text-black dark:text-eelg">
+                    {{ user.following }}
+                  </div>
+                  <div>Following</div>
+                </div>
+                <div class="flex space-x-2">
+                  <div class="font-bold text-black dark:text-eelg">
+                    {{ user.followers }}
+                  </div>
+                  <div>Followers</div>
+                </div>
+              </div>
+            </div>
+            <!-- profile: misc -->
+            <div class="relative grid grid-cols-4 text-2xl font-bold pt-4">
+              <button
+                v-for="item in misc"
+                :key="item.name"
+                class="p-6 hover:text-blue hover:bg-blue hover:bg-opacity-20 focus:outline-none focus:text-blue"
+              >
+                <div class="font-black">
+                  {{ item.name }}
+                </div>
+              </button>
+              <div class="absolute bg-blue h-1 w-1/4 bottom-0"></div>
             </div>
           </div>
 
@@ -166,6 +239,32 @@ export default {
         {
           text: 'Profile',
           icon: ['fas', 'user'],
+        },
+      ],
+      user: {
+        name: 'Elon Musk',
+        handle: '@elonmusk',
+        description: 'Technoking of Tesla',
+        date: 'Joined June 2009',
+        following: '104',
+        followers: '50.4M',
+      },
+      misc: [
+        {
+          name: 'Tweets',
+          isActive: true,
+        },
+        {
+          name: 'Tweets & replies',
+          isActive: false,
+        },
+        {
+          name: 'Media',
+          isActive: false,
+        },
+        {
+          name: 'Likes',
+          isActive: false,
         },
       ],
       tweets: ['hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi'],
