@@ -1,30 +1,67 @@
 <template>
   <div :class="isDark ? 'dark' : ''">
-    <div class="flex min-h-screen bg-eelg dark:bg-black">
-      <div
-        class="grid grid-cols-2 xl:grid-cols-3 p-4 text-4xl text-black dark:text-eelg"
-      >
+    <div class="min-h-screen bg-eelg dark:bg-tb">
+      <div class="flex divide-x-2 text-4xl text-black dark:text-eelg">
         <!-- left -->
-        <div>
-          <div
-            v-for="item in leftNavbarItems"
-            :key="item.icon"
-            class="flex space-x-4"
-          >
-            <fa :icon="item.icon" />
-            <div v-if="item.text">
-              {{ item.text }}
+        <div class="px-4 flex flex-col justify-between">
+          <div>
+            <div v-for="item in leftNavbarItems" :key="item.icon">
+              <button
+                class="flex p-6 space-x-8 rounded-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              >
+                <div class="w-16">
+                  <fa :icon="item.icon" />
+                </div>
+                <div v-if="item.text" class="font-black hidden 2xl:flex">
+                  {{ item.text }}
+                </div>
+              </button>
             </div>
+
+            <button
+              @click="isDark = !isDark"
+              class="flex p-5 space-x-8 rounded-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+            >
+              <div class="w-16">
+                <fa v-if="isDark" :icon="['fas', 'toggle-on']" />
+                <fa v-else :icon="['fas', 'toggle-off']" />
+              </div>
+              <div class="font-black hidden 2xl:flex">Mode</div>
+            </button>
+
+            <button
+              class="flex w-full p-5 mt-2 space-x-8 rounded-full bg-blue focus:outline-none"
+            >
+              <div class="mx-auto">
+                <div class="flex 2xl:hidden">
+                  <fa :icon="['fas', 'feather-alt']" />
+                </div>
+                <div class="text-2xl font-black text-eelg hidden 2xl:flex">
+                  Tweet
+                </div>
+              </div>
+            </button>
           </div>
-          <button @click="isDark = !isDark" class="focus:outline-none">
-            <fa v-if="isDark" :icon="['fas', 'toggle-on']" />
-            <fa v-else :icon="['fas', 'toggle-off']" />
-          </button>
+
+          <div class="pb-4">
+            <button
+              class="flex p-6 space-x-8 rounded-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+            >
+              <!-- <div class="w-16">
+                <img :icon="item.icon" />
+              </div> -->
+              <!-- <div v-if="item.text" class="font-black hidden 2xl:flex">
+                {{ item.text }}
+              </div> -->
+            </button>
+          </div>
         </div>
+
         <!-- content -->
-        <div>content</div>
+        <div class="min-h-screen flex-grow">content</div>
+
         <!-- right -->
-        <div class="hidden xl:flex">right</div>
+        <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div>
       </div>
     </div>
   </div>
@@ -62,11 +99,11 @@ export default {
         },
         {
           text: 'Lists',
-          icon: ['fas', 'bell'],
+          icon: ['fas', 'list-alt'],
         },
         {
           text: 'Profile',
-          icon: ['fas', 'bell'],
+          icon: ['fas', 'user'],
         },
       ],
     };
