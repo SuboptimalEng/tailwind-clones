@@ -50,7 +50,7 @@
 
           <div class="pb-4">
             <button
-              class="flex p-5 justify-between rounded-full place-items-center text-2xl 2xl:w-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
+              class="flex p-5 space-x-2 rounded-full place-items-center text-2xl 2xl:w-full focus:outline-none hover:text-blue hover:bg-blue hover:bg-opacity-20"
             >
               <div class="w-20">
                 <img
