@@ -30,7 +30,7 @@
                 <fa v-if="isDark" :icon="['fas', 'toggle-on']" />
                 <fa v-else :icon="['fas', 'toggle-off']" />
               </div>
-              <div class="font-black hidden 2xl:flex">Mode</div>
+              <div class="font-black hidden 2xl:flex">Dark Mode</div>
             </button>
 
             <!-- class="flex w-24 p-5 mt-2 rounded-full bg-blue focus:outline-none 2xl:w-full" -->
