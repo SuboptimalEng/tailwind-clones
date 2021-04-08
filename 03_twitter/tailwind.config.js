@@ -2,7 +2,11 @@ module.exports = {
   purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      margin: {
+        '506px': '506px',
+      },
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

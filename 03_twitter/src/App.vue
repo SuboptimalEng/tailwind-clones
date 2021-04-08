@@ -6,7 +6,7 @@
       >
         <!-- left -->
         <div
-          class="px-4 pl-32 flex flex-col justify-between max-h-screen static"
+          class="px-4 pl-32 flex flex-col justify-between max-h-screen top-0 bottom-0 left-0 fixed"
         >
           <div>
             <div v-for="item in leftNavbarItems" :key="item.icon">
@@ -71,7 +71,8 @@
 
         <!-- content -->
         <!-- <div class="min-h-screen flex-grow">content</div> -->
-        <div class="min-h-screen flex-grow">
+        <div class="ml-506px min-h-screen flex-grow">
+          content
           <div v-for="tweet in tweets" :key="tweet" class="h-60 w-60 m-auto">
             hi
           </div>
