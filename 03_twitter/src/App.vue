@@ -106,19 +106,27 @@
           <div class="w-full">
             <!-- profile: pic -->
             <div class="relative">
-              <div class="bg-dg h-72">.</div>
+              <div class="bg-white h-72">
+                <img
+                  src="/images/doge_moon.jpeg"
+                  alt=""
+                  class="h-72 w-full object-top object-cover"
+                />
+              </div>
               <div
-                class="absolute rounded-full bg-eelg dark:bg-dg h-48 w-48 top-2/3 left-4"
+                class="absolute rounded-full bg-eelg dark:bg-tb h-48 w-48 top-2/3 left-4"
               >
                 <div class="h-44 w-44 m-2">
                   <img
-                    src="/images/profile_pic.png"
+                    src="/images/elon.jpeg"
                     alt=""
-                    class="rounded-full"
+                    class="rounded-full object-cover"
                   />
                 </div>
               </div>
             </div>
+
+            <!-- <div class="w-full h-1 bg-tb"></div> -->
 
             <!-- profile: notifs -->
             <div
@@ -160,7 +168,7 @@
               </div>
 
               <!-- profile: info -->
-              <div class="text-xl">
+              <div class="text-2xl">
                 {{ user.description }}
               </div>
 
@@ -225,7 +233,7 @@
               <input
                 type="text"
                 placeholder="Search Twitter"
-                class="text-xl w-full rounded-r-full bg-elg dark:bg-black focus:outline-none"
+                class="text-2xl w-full rounded-r-full bg-elg dark:bg-black focus:outline-none"
               />
             </div>
 
@@ -243,10 +251,38 @@
 
             <!-- you might like -->
             <div
-              class="flex flex-col divide-y divide-black dark:divide-elg mt-6 mx-4 rounded-2xl bg-elg dark:bg-black"
+              class="flex flex-col divide-y divide-dg dark:divide-elg mt-6 mx-4 rounded-2xl bg-elg dark:bg-black"
             >
-              <div class="p-4">You might like</div>
-              <div class="p-4">You might like</div>
+              <div class="p-4 font-black h-16">You might like</div>
+              <div v-for="user in users" :key="user.name">
+                <div class="flex place-items-center p-4 justify-between">
+                  <div class="flex place-items-center">
+                    <div>
+                      <img :src="user.image" alt="" class="h-16 rounded-full" />
+                    </div>
+                    <div class="flex flex-col text-2xl px-2">
+                      <div class="flex place-items-center">
+                        <div class="font-black">
+                          {{ user.name }}
+                        </div>
+                        <fa
+                          :icon="['fas', 'check-circle']"
+                          class="ml-1 text-blue dark:text-eelg hover:text-black"
+                        />
+                      </div>
+                      <div>{{ user.handle }}</div>
+                    </div>
+                  </div>
+                  <div
+                    class="border rounded-full p-2 text-xl font-black text-blue border-blue hover:bg-blue hover:bg-opacity-20"
+                  >
+                    Follow
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 text-xl h-16 text-blue font-medium">
+                Show more
+              </div>
             </div>
           </div>
         </div>
@@ -299,7 +335,8 @@ export default {
       user: {
         name: 'Elon Musk',
         handle: '@elonmusk',
-        description: 'Technoking of Tesla',
+        description:
+          "Master of memes, King of Queen's. Occasionally making schemes to save humanity.",
         date: 'Joined June 2009',
         following: '104',
         followers: '50.4M',
@@ -323,12 +360,29 @@ export default {
         },
       ],
       images: [
-        '/images/profile_pic.png',
-        '/images/profile_pic.png',
-        '/images/profile_pic.png',
-        '/images/profile_pic.png',
-        '/images/profile_pic.png',
-        '/images/profile_pic.png',
+        '/images/s.png',
+        '/images/t.png',
+        '/images/o.png',
+        '/images/n.png',
+        '/images/k.png',
+        '/images/s.png',
+      ],
+      users: [
+        {
+          image: '/images/doge.png',
+          name: 'Dogecoin',
+          handle: '@dogecoin',
+        },
+        {
+          image: '/images/wsb.png',
+          name: 'wsb',
+          handle: '@wsbmod',
+        },
+        {
+          image: '/images/naval.jpeg',
+          name: 'Naval',
+          handle: '@naval',
+        },
       ],
       tweets: ['hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi'],
     };

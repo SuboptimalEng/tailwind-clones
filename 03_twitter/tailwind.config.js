@@ -19,6 +19,7 @@ module.exports = {
       lb: '#BBDFEA',
       black: '#14171A',
       tb: '#000000',
+      white: '#FFFFFF',
       dg: '#657786',
       'light-gray': '#AAB8C2',
       elg: '#E1E8ED',
