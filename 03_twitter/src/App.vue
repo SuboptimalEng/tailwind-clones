@@ -221,9 +221,9 @@
             <div v-for="tweet in tweets" :key="tweet" class="p-5">
               <div class="flex place-items-start space-x-4">
                 <img :src="tweet.image" alt="" class="w-24 rounded-full" />
-                <div class="flex flex-col space-y-2">
-                  <div class="flex space-x-4 place-items-center pt-2">
-                    <div class="text-2xl font-black">
+                <div class="flex flex-col space-y-2 w-full">
+                  <div class="flex place-items-center pt-2">
+                    <div class="text-2xl w-52 font-black">
                       {{ tweet.name }}
                       <fa
                         :icon="['fas', 'check-circle']"
@@ -231,14 +231,24 @@
                       />
                     </div>
                     <div
-                      class="flex place-items-center text-dg dark:text-light-gray space-x-2 font-thin"
+                      class="flex w-full relative place-items-center text-dg dark:text-light-gray font-thin"
                     >
-                      <div class="text-2xl">
-                        {{ tweet.handle }}
+                      <div class="flex space-x-2 place-items-center">
+                        <div class="text-2xl">
+                          {{ tweet.handle }}
+                        </div>
+                        <div class="text-base">●</div>
+                        <div class="text-2xl">
+                          {{ tweet.date }}
+                        </div>
                       </div>
-                      <div class="text-base">●</div>
-                      <div class="text-2xl">
-                        {{ tweet.date }}
+                      <div
+                        class="absolute right-0 text-2xl rounded-full p-2 hover:bg-blue hover:bg-opacity-20 hover:text-blue"
+                      >
+                        <fa
+                          :icon="['fas', 'ellipsis-h']"
+                          class="rounded-full"
+                        />
                       </div>
                     </div>
                   </div>
@@ -246,7 +256,7 @@
                   <div class="text-2xl flex space-x-20">
                     <div v-for="action in tweet.actions" :key="action.icon">
                       <div
-                        class="rounded-full p-2 text-dg dark:text-light-gray hover:bg-blue hover:bg-opacity-20 hover:text-blue"
+                        class="rounded-full p-2 text-dg hover:bg-blue hover:bg-opacity-20 hover:text-blue"
                       >
                         <fa :icon="action.icon" />
                         {{ action.iconText }}
@@ -423,31 +433,6 @@ export default {
         },
       ],
       tweets: [
-        {
-          image: '/images/elon.jpeg',
-          name: 'Elon Musk',
-          handle: '@elonmusk',
-          date: '14h',
-          text: 'Soon our monkey will be on twitch & discord haha 🦧',
-          actions: [
-            {
-              icon: ['fas', 'comment'],
-              iconText: '5.5k',
-            },
-            {
-              icon: ['fas', 'retweet'],
-              iconText: '9.5k',
-            },
-            {
-              icon: ['fas', 'heart'],
-              iconText: '10.1k',
-            },
-            {
-              icon: ['fas', 'share'],
-              iconText: '',
-            },
-          ],
-        },
         {
           image: '/images/elon.jpeg',
           name: 'Elon Musk',
