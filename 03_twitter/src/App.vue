@@ -2,7 +2,7 @@
   <div :class="isDark ? 'dark' : ''">
     <div class="min-h-screen bg-eelg dark:bg-tb">
       <div
-        class="flex justify-around divide-x text-4xl text-black pl-32 2xl:pl-0 dark:divide-eelg dark:text-eelg"
+        class="flex justify-center divide-x text-4xl text-black pl-32 2xl:pl-0 dark:divide-eelg dark:text-eelg"
       >
         <!-- navbar -->
         <div
@@ -49,7 +49,7 @@
                 <fa :icon="['fas', 'feather-alt']" class="text-eelg" />
               </div>
               <div
-                class="mx-auto text-2xl content-center font-black text-eelg hidden 2xl:flex"
+                class="mx-auto text-2xl font-black text-eelg hidden 2xl:flex"
               >
                 Tweet
               </div>
@@ -121,8 +121,30 @@
             </div>
 
             <!-- profile: notifs -->
-            <div class="flex bg-blue justify-end mt-4">
-              <div class="">hi</div>
+            <div
+              class="flex text-2xl text-blue justify-end mt-4 mr-5 space-x-4 place-items-center"
+            >
+              <button
+                class="rounded-full hover:text-blue hover:bg-blue hover:bg-opacity-20 focus:outline-none"
+              >
+                <fa
+                  :icon="['fas', 'ellipsis-h']"
+                  class="text-6xl border rounded-full p-4"
+                />
+              </button>
+              <button
+                class="rounded-full hover:text-blue hover:bg-blue hover:bg-opacity-20 focus:outline-none"
+              >
+                <fa
+                  :icon="['fas', 'bell']"
+                  class="text-6xl border rounded-full p-4"
+                />
+              </button>
+              <button
+                class="p-4 px-6 bg-blue text-eelg font-bold border border-blue rounded-full focus:outline-none"
+              >
+                <div>Following</div>
+              </button>
             </div>
 
             <!-- profile: name -->
@@ -193,9 +215,8 @@
 
         <!-- right -->
         <!-- <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div> -->
-        <div class="min-h-screen hidden 2xl:flex 2xl:flex-shrink 2xl:w-96">
-          right
-        </div>
+        <div class="min-h-screen hidden 2xl:flex">right</div>
+        <div class="min-h-screen flex w-32 2xl:hidden" />
       </div>
     </div>
   </div>
