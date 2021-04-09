@@ -148,7 +148,7 @@
             </div>
 
             <!-- profile: name -->
-            <div class="pt-14 pl-5 flex flex-col space-y-4">
+            <div class="pt-5 pl-5 flex flex-col space-y-4">
               <div>
                 <div class="flex place-items-center space-x-2">
                   <div class="font-black">{{ user.name }}</div>
@@ -215,8 +215,23 @@
 
         <!-- right -->
         <!-- <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div> -->
-        <div class="min-h-screen hidden 2xl:flex">right</div>
-        <div class="min-h-screen flex w-32 2xl:hidden" />
+        <div class="max-h-full p-4 hidden xl:flex xl:w-506px">
+          <div class="flex flex-col w-full">
+            <div class="flex rounded-full bg-elg dark:bg-black">
+              <div class="text-3xl p-4 pl-8">
+                <fa :icon="['fas', 'search']" />
+              </div>
+              <input
+                type="text"
+                placeholder="Search Twitter"
+                class="text-xl w-full rounded-r-full bg-elg dark:bg-black focus:outline-none"
+              />
+            </div>
+            <div class="">hi</div>
+            <div class="">hi</div>
+          </div>
+        </div>
+        <div class="min-h-screen flex w-64 xl:hidden" />
       </div>
     </div>
   </div>
