@@ -203,9 +203,12 @@
               <button
                 v-for="item in misc"
                 :key="item.name"
-                class="p-6 hover:text-blue hover:bg-blue hover:bg-opacity-20 focus:outline-none focus:text-blue"
+                class="p-6 hover:text-blue hover:bg-blue hover:bg-opacity-20 focus:outline-none"
               >
-                <div class="font-black">
+                <div v-if="item.isActive" class="font-black text-blue">
+                  {{ item.name }}
+                </div>
+                <div v-else class="font-black">
                   {{ item.name }}
                 </div>
               </button>
@@ -214,9 +217,44 @@
           </div>
 
           <!-- tweets -->
-          <div>
-            <div v-for="tweet in tweets" :key="tweet" class="h-60 w-60 m-auto">
-              hi
+          <div class="flex flex-col divide-y">
+            <div v-for="tweet in tweets" :key="tweet" class="p-5">
+              <div class="flex place-items-start space-x-4">
+                <img :src="tweet.image" alt="" class="w-24 rounded-full" />
+                <div class="flex flex-col space-y-2">
+                  <div class="flex space-x-4 place-items-center pt-2">
+                    <div class="text-2xl font-black">
+                      {{ tweet.name }}
+                      <fa
+                        :icon="['fas', 'check-circle']"
+                        class="text-blue dark:text-eelg"
+                      />
+                    </div>
+                    <div
+                      class="flex place-items-center text-dg dark:text-light-gray space-x-2 font-thin"
+                    >
+                      <div class="text-2xl">
+                        {{ tweet.handle }}
+                      </div>
+                      <div class="text-base">●</div>
+                      <div class="text-2xl">
+                        {{ tweet.date }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-2xl">{{ tweet.text }}</div>
+                  <div class="text-2xl flex space-x-20">
+                    <div v-for="action in tweet.actions" :key="action.icon">
+                      <div
+                        class="rounded-full p-2 text-dg dark:text-light-gray hover:bg-blue hover:bg-opacity-20 hover:text-blue"
+                      >
+                        <fa :icon="action.icon" />
+                        {{ action.iconText }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -267,7 +305,7 @@
                         </div>
                         <fa
                           :icon="['fas', 'check-circle']"
-                          class="ml-1 text-blue dark:text-eelg hover:text-black"
+                          class="ml-1 text-blue dark:text-eelg"
                         />
                       </div>
                       <div>{{ user.handle }}</div>
@@ -384,7 +422,133 @@ export default {
           handle: '@naval',
         },
       ],
-      tweets: ['hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi'],
+      tweets: [
+        {
+          image: '/images/elon.jpeg',
+          name: 'Elon Musk',
+          handle: '@elonmusk',
+          date: '14h',
+          text: 'Soon our monkey will be on twitch & discord haha 🦧',
+          actions: [
+            {
+              icon: ['fas', 'comment'],
+              iconText: '5.5k',
+            },
+            {
+              icon: ['fas', 'retweet'],
+              iconText: '9.5k',
+            },
+            {
+              icon: ['fas', 'heart'],
+              iconText: '10.1k',
+            },
+            {
+              icon: ['fas', 'share'],
+              iconText: '',
+            },
+          ],
+        },
+        {
+          image: '/images/elon.jpeg',
+          name: 'Elon Musk',
+          handle: '@elonmusk',
+          date: 'Mar 30',
+          text: 'Who let the doge out 🎶',
+          actions: [
+            {
+              icon: ['fas', 'comment'],
+              iconText: '4.8k',
+            },
+            {
+              icon: ['fas', 'retweet'],
+              iconText: '1.4k',
+            },
+            {
+              icon: ['fas', 'heart'],
+              iconText: '1.0k',
+            },
+            {
+              icon: ['fas', 'share'],
+              iconText: '',
+            },
+          ],
+        },
+        {
+          image: '/images/elon.jpeg',
+          name: 'Elon Musk',
+          handle: '@elonmusk',
+          date: 'Mar 30',
+          text: 'Who let the doge out 🎶',
+          actions: [
+            {
+              icon: ['fas', 'comment'],
+              iconText: '4.8k',
+            },
+            {
+              icon: ['fas', 'retweet'],
+              iconText: '1.4k',
+            },
+            {
+              icon: ['fas', 'heart'],
+              iconText: '1.0k',
+            },
+            {
+              icon: ['fas', 'share'],
+              iconText: '',
+            },
+          ],
+        },
+        {
+          image: '/images/elon.jpeg',
+          name: 'Elon Musk',
+          handle: '@elonmusk',
+          date: 'Mar 30',
+          text: 'Who let the doge out 🎶',
+          actions: [
+            {
+              icon: ['fas', 'comment'],
+              iconText: '4.8k',
+            },
+            {
+              icon: ['fas', 'retweet'],
+              iconText: '1.4k',
+            },
+            {
+              icon: ['fas', 'heart'],
+              iconText: '1.0k',
+            },
+            {
+              icon: ['fas', 'share'],
+              iconText: '',
+            },
+          ],
+        },
+        {
+          image: '/images/elon.jpeg',
+          name: 'Elon Musk',
+          handle: '@elonmusk',
+          date: 'Mar 30',
+          text: 'Who let the doge out 🎶',
+          actions: [
+            {
+              icon: ['fas', 'comment'],
+              iconText: '4.8k',
+            },
+            {
+              icon: ['fas', 'retweet'],
+              iconText: '1.4k',
+            },
+            {
+              icon: ['fas', 'heart'],
+              iconText: '1.0k',
+            },
+            {
+              icon: ['fas', 'share'],
+              iconText: '',
+            },
+          ],
+        },
+      ],
     };
   },
 };
