@@ -217,6 +217,7 @@
         <!-- <div class="min-h-screen hidden 2xl:flex 2xl:flex-grow">right</div> -->
         <div class="max-h-full p-4 hidden xl:flex xl:w-506px">
           <div class="flex flex-col w-full">
+            <!-- search bar -->
             <div class="flex rounded-full bg-elg dark:bg-black">
               <div class="text-3xl p-4 pl-8">
                 <fa :icon="['fas', 'search']" />
@@ -227,8 +228,26 @@
                 class="text-xl w-full rounded-r-full bg-elg dark:bg-black focus:outline-none"
               />
             </div>
-            <div class="">hi</div>
-            <div class="">hi</div>
+
+            <!-- images -->
+            <div
+              class="mt-6 mx-4 rounded grid grid-cols-3 gap-0 place-items-center"
+            >
+              <img
+                v-for="image in images"
+                :key="image"
+                :src="image"
+                class="w-full border-2 border-eelg rounded-2xl dark:border-tb"
+              />
+            </div>
+
+            <!-- you might like -->
+            <div
+              class="flex flex-col divide-y divide-black dark:divide-elg mt-6 mx-4 rounded-2xl bg-elg dark:bg-black"
+            >
+              <div class="p-4">You might like</div>
+              <div class="p-4">You might like</div>
+            </div>
           </div>
         </div>
         <div class="min-h-screen flex w-64 xl:hidden" />
@@ -302,6 +321,14 @@ export default {
           name: 'Likes',
           isActive: false,
         },
+      ],
+      images: [
+        '/images/profile_pic.png',
+        '/images/profile_pic.png',
+        '/images/profile_pic.png',
+        '/images/profile_pic.png',
+        '/images/profile_pic.png',
+        '/images/profile_pic.png',
       ],
       tweets: ['hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi'],
     };
