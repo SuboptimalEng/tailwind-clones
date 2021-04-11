@@ -6,5 +6,5 @@
 ## 02 Reddit - Responsive UI
 <img src="demos/02_reddit.gif" width="600">
 
-## 01 YouTube - Simple Clone
+## 01 YouTube - Nothing Special
 <img src="/demos/01_youtube.gif" width="600">
