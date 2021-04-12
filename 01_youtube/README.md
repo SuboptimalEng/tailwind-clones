@@ -1,4 +1,4 @@
-# 01_youtube_home_page
+# 01_youtube
 
 ## Project setup
 ```
