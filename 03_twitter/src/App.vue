@@ -6,7 +6,7 @@
       >
         <!-- navbar -->
         <div
-          class="px-4 ml-32 2xl:mx-auto flex flex-col justify-between max-h-screen top-0 bottom-0 left-0 fixed"
+          class="px-4 ml-32 2xl:mx-auto flex flex-col justify-between top-0 bottom-0 left-0 fixed"
         >
           <div>
             <div v-for="item in leftNavbarItems" :key="item.icon">
@@ -84,7 +84,6 @@
         <div
           class="min-h-screen flex flex-col flex-grow divide-y divide-eeelg ml-32 2xl:ml-392px"
         >
-          <!-- back -->
           <div class="flex place-items-center w-full py-2">
             <div
               class="mx-4 p-5 rounded-full text-blue hover:text-blue hover:bg-blue hover:bg-opacity-20"
