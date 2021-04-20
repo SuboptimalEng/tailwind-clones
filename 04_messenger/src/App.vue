@@ -1,8 +1,27 @@
 <template>
-  <div class="flex w-full h-full min-h-screen">
-    <div class="mx-auto pt-16 text-6xl">
-      <fa icon="coffee" class="hover:text-gray-400" />
-      <fa :icon="['fab', 'youtube']" class="hover:text-gray-400" />
+  <div class="flex min-h-screen bg-lb">
+    <div class="min-w-full min-h-full p-4">
+      <div class="grid grid-cols-2 h-full bg-white">
+        <!-- users section -->
+        <div class="grid grid-rows-2 h-full">
+          <!-- fixed: options -->
+          <div class="flex border"></div>
+          <!-- scrollable: users -->
+          <div class="flex border"></div>
+        </div>
+
+        <!-- messages section -->
+        <div class="flex flex-col border">
+          <div class="grid grid-rows-3 h-full">
+            <!-- fixed: details  -->
+            <div class="flex border"></div>
+            <!-- scrollable: messages -->
+            <div class="flex border"></div>
+            <!-- fixed: send -->
+            <div class="flex border"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
