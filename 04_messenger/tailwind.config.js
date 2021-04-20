@@ -11,6 +11,7 @@ module.exports = {
       lb: '#00C6FF',
       white: "#FFFFFF",
       black: "#000000",
+      gray: '#E5E7EB',
     }
   },
   variants: {
