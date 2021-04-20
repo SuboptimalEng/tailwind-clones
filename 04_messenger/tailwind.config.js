@@ -2,7 +2,15 @@ module.exports = {
   purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      inset: {
+        '470px': '470px',
+      },
+      width: {
+        '450px': '450px',
+      },
+      overflow: ['hover'],
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -12,6 +20,7 @@ module.exports = {
       white: "#FFFFFF",
       black: "#000000",
       gray: '#E5E7EB',
+      red: '#EF4444',
     }
   },
   variants: {
