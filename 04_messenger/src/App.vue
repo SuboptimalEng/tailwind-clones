@@ -3,7 +3,7 @@
     <div class="min-w-full min-h-full p-4">
       <!-- <div class="grid grid-cols-2 h-full bg-white text-black"> -->
       <!-- users section -->
-      <div class="flex border">
+      <div class="flex lg:divide-x h-full">
         <div class="h-full w-36 lg:w-450px">
           <!-- fixed: profile -->
           <div class="hidden lg:flex flex-col p-4 space-y-4">
@@ -29,9 +29,7 @@
               </div>
             </div>
             <div class="flex w-full place-items-center justify-between">
-              <div
-                class="rounded-full w-full bg-gray border px-2 py-2 flex space-x-2"
-              >
+              <div class="rounded-full w-full bg-gray px-2 py-2 flex space-x-2">
                 <fa :icon="['fas', 'search']" class="text-2xl my-auto" />
                 <input
                   type="text"
@@ -73,9 +71,10 @@
             </div>
           </div>
         </div>
+
         <!-- messages section -->
-        <div class="flex flex-col border">
-          <div class="flex border fixed top-4 right-4 left-32 lg:left-470px">
+        <div class="flex flex-col flex-grow">
+          <div class="flex fixed border top-4 right-4 left-32 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
               <div class="flex place-items-center space-x-2">
                 <div class="w-14 h-14">
@@ -85,7 +84,9 @@
                     class="rounded-full"
                   />
                 </div>
-                <div class="text-xl font-black">Suboptimal Engineer</div>
+                <div class="hidden md:flex text-xl font-black">
+                  Suboptimal Engineer
+                </div>
               </div>
               <div class="flex">
                 <div v-for="item in messageActions" :key="item.icon">
@@ -96,8 +97,36 @@
               </div>
             </div>
           </div>
-          <!-- <div class="flex border">scrollable: messages</div> -->
+          <!-- <div class="flex fixed mt-40 border">scrollable: messages</div> -->
           <!-- <div class="flex border fixed bottom-4">fixed: send</div> -->
+          <div class="flex fixed border bottom-4 right-4 left-32 lg:left-470px">
+            <div class="flex p-4 place-items-center w-full justify-between">
+              <div class="flex">
+                <div v-for="item in sendMessageActions" :key="item.icon">
+                  <div class="w-10 h-10 flex place-content-center">
+                    <fa :icon="item.icon" class="text-2xl my-auto text-blue" />
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-grow bg-gray rounded-full p-4 mx-2">
+                <input
+                  type="text"
+                  placeholder="Aa"
+                  class="bg-gray rounded-full flex flex-grow"
+                />
+                <fa
+                  :icon="['fas', 'smile']"
+                  class="text-2xl my-auto text-blue"
+                />
+              </div>
+              <div>
+                <fa
+                  :icon="['fas', 'thumbs-up']"
+                  class="text-2xl my-auto text-blue"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- </div> -->
@@ -121,6 +150,32 @@ export default {
           icon: ['fas', 'edit'],
         },
       ],
+      messages: [
+        {
+          sent: 'false',
+          message: 'hello world',
+        },
+        {
+          sent: 'false',
+          message: 'hello world',
+        },
+        {
+          sent: 'false',
+          message: 'hello world',
+        },
+        {
+          sent: 'false',
+          message: 'hello world',
+        },
+        {
+          sent: 'true',
+          message: 'hello world',
+        },
+        {
+          sent: 'false',
+          message: 'hello world',
+        },
+      ],
       messageActions: [
         {
           icon: ['fas', 'phone'],
@@ -130,6 +185,17 @@ export default {
         },
         {
           icon: ['fas', 'question-circle'],
+        },
+      ],
+      sendMessageActions: [
+        {
+          icon: ['fas', 'plus-circle'],
+        },
+        {
+          icon: ['fas', 'image'],
+        },
+        {
+          icon: ['fas', 'paste'],
         },
       ],
       users: [
