@@ -1,6 +1,6 @@
 # 🍃 Cloning the UIs' of popular websites with Tailwind CSS
 
-## 04 Messenger - Tailwind Themes + Responsive UI + Electron
+## 04 Messenger - Tailwind Themes + Responsive UI + Electron Desktop App
 <img src="/demos/04_messenger.gif" width="600">
 
 ## 03 Twitter - Tailwind Themes + Responsive UI + Dark Mode
