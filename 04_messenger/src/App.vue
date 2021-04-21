@@ -279,7 +279,7 @@ export default {
         {
           name: 'Ben Awad',
           profilePic: '/images/ben.jpeg',
-          lastMessage: 'Join 🐶🏠.',
+          lastMessage: 'Join me on 🐶🏠.',
           updated: '5m',
         },
         {
