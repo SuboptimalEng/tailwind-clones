@@ -45,35 +45,33 @@
             class="flex overflow-y-auto fixed top-4 bottom-4 left-4 lg:top-44 lg:w-450px"
           >
             <div class="flex flex-col px-2 w-full">
-              <div
+              <button
                 v-for="user in users"
                 :key="user"
-                class="rounded-lg p-4 bg-white hover:bg-gray"
+                class="rounded-lg p-4 bg-white flex place-items-center space-x-2 hover:bg-gray focus:outline-none focus:bg-gray"
               >
-                <div class="flex place-items-center space-x-2">
-                  <div class="w-14 h-14 mx-auto lg:mx-0">
-                    <img
-                      src="/images/profile_pic.png"
-                      alt=""
-                      class="rounded-full"
-                    />
+                <div class="w-14 h-14 mx-auto lg:mx-0">
+                  <img
+                    src="/images/profile_pic.png"
+                    alt=""
+                    class="rounded-full"
+                  />
+                </div>
+                <div class="hidden lg:flex flex-col">
+                  <div class="text-xl font-medium">
+                    {{ user.name }}
                   </div>
-                  <div class="hidden lg:flex flex-col">
-                    <div class="text-xl font-medium">
-                      {{ user.name }}
-                    </div>
-                    <div>
-                      {{ user.lastMessage }}
-                    </div>
+                  <div>
+                    {{ user.lastMessage }}
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>
 
         <!-- messages section -->
-        <div class="flex flex-col lg:divide-y flex-grow">
+        <div class="flex flex-col divide-y flex-grow">
           <div class="flex fixed top-4 right-4 left-32 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
               <div class="flex place-items-center space-x-2">
@@ -102,14 +100,21 @@
             class="flex fixed top-24 bottom-28 left-32 right-4 lg:left-470px"
           >
             <div
-              class="flex flex-col overflow-y-auto w-full p-4 space-y-4 font-medium text-xl"
+              class="flex flex-col w-full overflow-y-auto p-4 space-y-4 font-medium text-xl"
             >
-              <div v-for="message in messages" :key="message">
+              <div
+                v-for="message in messages"
+                :key="message"
+                class="flex"
+                :class="message.class"
+              >
                 <!-- right side -->
-                <div v-if="message.sent">
-                  <div class="bg-blue p-4 rounded-full text-white">
-                    {{ message.text }}
-                  </div>
+                <div
+                  v-if="message.sent"
+                  class="bg-blue p-4 rounded-full text-white"
+                >
+                  hi
+                  {{ message.text }}
                 </div>
                 <!-- left side -->
                 <div v-else>
@@ -179,6 +184,7 @@ export default {
       messages: [
         {
           sent: true,
+          class: 'self-end',
           text: 'hello world',
           profilePic: '/images/profile_pic.png',
         },
@@ -189,6 +195,7 @@ export default {
         },
         {
           sent: true,
+          class: 'self-end',
           text: 'hello world',
           profilePic: '/images/profile_pic.png',
         },
@@ -199,6 +206,7 @@ export default {
         },
         {
           sent: true,
+          class: 'self-end',
           text: 'hello world',
           profilePic: '/images/profile_pic.png',
         },
@@ -209,6 +217,7 @@ export default {
         },
         {
           sent: true,
+          class: 'self-end',
           text: 'hello world',
           profilePic: '/images/profile_pic.png',
         },
@@ -219,6 +228,7 @@ export default {
         },
         {
           sent: true,
+          class: 'self-end',
           text: 'hello world',
           profilePic: '/images/profile_pic.png',
         },
