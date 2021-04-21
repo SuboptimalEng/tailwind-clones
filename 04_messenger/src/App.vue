@@ -82,11 +82,9 @@
                     class="rounded-full"
                   />
                 </div>
-                <div class="hidden md:flex text-xl font-black">
-                  Suboptimal Engineer
-                </div>
+                <div class="flex text-xl font-black">Suboptimal Engineer</div>
               </div>
-              <div class="flex">
+              <div class="hidden md:flex">
                 <div v-for="item in messageActions" :key="item.icon">
                   <div class="w-14 h-14 flex place-content-center">
                     <fa :icon="item.icon" class="text-2xl my-auto text-blue" />
