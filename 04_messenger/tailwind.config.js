@@ -9,7 +9,6 @@ module.exports = {
       width: {
         '450px': '450px',
       },
-      overflow: ['hover'],
     },
     colors: {
       transparent: 'transparent',

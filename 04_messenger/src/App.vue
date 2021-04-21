@@ -23,7 +23,37 @@
                   <div
                     class="w-14 h-14 bg-gray rounded-full flex place-content-center"
                   >
-                    <fa :icon="item.icon" class="text-2xl my-auto" />
+                    <Menu as="div" class="relative mx-auto my-auto">
+                      <MenuButton>
+                        <fa :icon="item.icon" class="text-2xl my-auto" />
+                      </MenuButton>
+                      <MenuItems class="absolute right-0 origin-top-right z-10">
+                        <MenuItem v-slot="{ active }">
+                          <div
+                            class="p-4 border bg-blue"
+                            :class="[
+                              active
+                                ? 'bg-blue-500 text-white'
+                                : 'bg-white text-black',
+                            ]"
+                          >
+                            Settings
+                          </div>
+                        </MenuItem>
+                        <MenuItem v-slot="{ active }">
+                          <div
+                            class="p-4 border bg-blue"
+                            :class="[
+                              active
+                                ? 'bg-blue-500 text-white'
+                                : 'bg-white text-black',
+                            ]"
+                          >
+                            Documentation
+                          </div>
+                        </MenuItem>
+                      </MenuItems>
+                    </Menu>
                   </div>
                 </div>
               </div>
@@ -96,7 +126,7 @@
             class="flex fixed top-24 bottom-24 left-40 right-4 lg:left-470px"
           >
             <div
-              class="flex flex-col w-full text-4xl overflow-y-auto p-4 space-y-4 font-medium"
+              class="flex flex-col w-full text-2xl overflow-y-auto p-4 space-y-4 font-medium"
             >
               <div
                 v-for="message in messages"
@@ -128,9 +158,6 @@
             </div>
           </div>
 
-          <!-- <div class="flex fixed mt-40 border">scrollable: messages</div> -->
-          <!-- <div class="flex border fixed bottom-4">fixed: send</div> -->
-
           <div class="flex fixed bottom-4 right-4 left-40 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
               <div class="flex">
@@ -161,16 +188,24 @@
           </div>
         </div>
       </div>
-      <!-- </div> -->
     </div>
   </div>
 </template>
 
 <script>
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
+
 export default {
   name: 'App',
+  components: {
+    Menu,
+    MenuButton,
+    MenuItems,
+    MenuItem,
+  },
   data() {
     return {
+      active: false,
       profileActions: [
         {
           icon: ['fas', 'ellipsis-h'],
