@@ -51,18 +51,20 @@
                 class="rounded-lg p-4 bg-white flex place-items-center space-x-2 hover:bg-gray focus:outline-none focus:bg-gray"
               >
                 <div class="w-20 h-20 mx-auto lg:mx-0">
-                  <img
-                    src="/images/profile_pic.png"
-                    alt=""
-                    class="rounded-full"
-                  />
+                  <img :src="user.profilePic" alt="" class="rounded-full" />
                 </div>
-                <div class="hidden lg:flex flex-col">
-                  <div class="text-xl font-medium">
+                <div class="hidden lg:flex flex-col items-start">
+                  <div class="text-3xl font-medium">
                     {{ user.name }}
                   </div>
-                  <div>
-                    {{ user.lastMessage }}
+                  <div class="flex text-xl space-x-1">
+                    <div>
+                      {{ user.lastMessage }}
+                    </div>
+                    <div>ּ·</div>
+                    <div>
+                      {{ user.updated }}
+                    </div>
                   </div>
                 </div>
               </button>
@@ -74,15 +76,11 @@
         <div class="flex flex-col divide-y flex-grow">
           <div class="flex fixed top-4 right-4 left-40 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
-              <div class="flex place-items-center space-x-2">
+              <div class="flex place-items-center space-x-4">
                 <div class="w-14 h-14">
-                  <img
-                    src="/images/profile_pic.png"
-                    alt=""
-                    class="rounded-full"
-                  />
+                  <img src="/images/mark.jpeg" alt="" class="rounded-full" />
                 </div>
-                <div class="flex text-xl font-black">Suboptimal Engineer</div>
+                <div class="flex text-4xl font-black">The Zucc</div>
               </div>
               <div class="hidden md:flex">
                 <div v-for="item in messageActions" :key="item.icon">
@@ -98,7 +96,7 @@
             class="flex fixed top-24 bottom-24 left-40 right-4 lg:left-470px"
           >
             <div
-              class="flex flex-col w-full overflow-y-auto p-4 space-y-4 font-medium text-xl"
+              class="flex flex-col w-full text-4xl overflow-y-auto p-4 space-y-4 font-medium"
             >
               <div
                 v-for="message in messages"
@@ -109,7 +107,7 @@
                 <!-- right side -->
                 <div
                   v-if="message.sent"
-                  class="bg-blue px-4 py-2 rounded-full text-white"
+                  class="bg-blue px-6 py-2 rounded-full text-white"
                 >
                   {{ message.text }}
                 </div>
@@ -122,7 +120,7 @@
                       class="rounded-full"
                     />
                   </div>
-                  <div class="bg-gray px-4 py-2 rounded-full object-right">
+                  <div class="bg-gray px-6 py-2 rounded-full object-right">
                     {{ message.text }}
                   </div>
                 </div>
@@ -186,64 +184,67 @@ export default {
       ],
       messages: [
         {
+          sent: true,
+          class: 'self-end',
+          text: 'Hey Mark, I got a question for you 🤔',
+        },
+        {
           sent: false,
-          text: 'hello world',
-          profilePic: '/images/profile_pic.png',
+          text: 'hello earth 🌎',
+          profilePic: '/images/mark.jpeg',
+        },
+        {
+          sent: false,
+          text: 'I mean... hello world',
+          profilePic: '/images/mark.jpeg',
         },
         {
           sent: true,
           class: 'self-end',
-          text: 'hello world',
-          profilePic: '/images/profile_pic.png',
-        },
-        {
-          sent: false,
-          text: 'hello world',
-          profilePic: '/images/profile_pic.png',
+          text: 'Is it true what the rumors say?',
         },
         {
           sent: true,
           class: 'self-end',
-          text: 'hello world',
+          text: 'Are you an 👽?',
           profilePic: '/images/profile_pic.png',
         },
         {
           sent: false,
-          text: 'hello world',
-          profilePic: '/images/profile_pic.png',
+          text: "I'm just smokin' these meats 🍖🔥",
+          profilePic: '/images/mark.jpeg',
         },
         {
           sent: true,
           class: 'self-end',
-          text: 'hello world',
+          text: 'What?',
           profilePic: '/images/profile_pic.png',
         },
         {
           sent: false,
-          text: 'hello world',
-          profilePic: '/images/profile_pic.png',
+          text: 'Meat like a brisket',
+          profilePic: '/images/mark.jpeg',
         },
         {
           sent: true,
           class: 'self-end',
-          text: 'hello world',
+          text: 'What do you mean?',
           profilePic: '/images/profile_pic.png',
         },
         {
           sent: false,
-          text: 'hello world',
-          profilePic: '/images/profile_pic.png',
+          text: 'We are live from my backyard.',
+          profilePic: '/images/mark.jpeg',
         },
         {
           sent: true,
           class: 'self-end',
-          text: 'hello world',
-          profilePic: '/images/profile_pic.png',
+          text: "That's wild",
         },
         {
           sent: false,
           text: 'hello world',
-          profilePic: '/images/profile_pic.png',
+          profilePic: '/images/mark.jpeg',
         },
       ],
       messageActions: [
@@ -270,34 +271,34 @@ export default {
       ],
       users: [
         {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
+          name: 'The Zucc',
+          profilePic: '/images/mark.jpeg',
+          lastMessage: 'Meat like a brisket.',
+          updated: '1m',
         },
         {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
+          name: 'Ben Awad',
+          profilePic: '/images/ben.jpeg',
+          lastMessage: 'Join 🐶🏠.',
+          updated: '5m',
         },
         {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
+          name: 'Harshibar',
+          profilePic: '/images/harshibar.jpeg',
+          lastMessage: 'I use Signal now ✌🏾',
+          updated: '20m',
         },
         {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
+          name: 'Rahul Pandey',
+          profilePic: '/images/rahul.jpeg',
+          lastMessage: 'Considering joining FB?',
+          updated: '1h',
         },
         {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
+          name: 'The Algo Expert',
+          profilePic: '/images/clement.jpeg',
+          lastMessage: 'Heyhowsitgoing?',
+          updated: '1d',
         },
         {
           name: 'Suboptimal Engineer',
