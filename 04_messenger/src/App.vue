@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class="flex w-full place-items-center justify-between">
-              <div class="rounded-full w-full bg-gray px-2 py-2 flex space-x-2">
+              <div class="rounded-full w-full bg-gray px-4 py-2 flex space-x-2">
                 <fa :icon="['fas', 'search']" class="text-2xl my-auto" />
                 <input
                   type="text"
@@ -50,7 +50,7 @@
                 :key="user"
                 class="rounded-lg p-4 bg-white flex place-items-center space-x-2 hover:bg-gray focus:outline-none focus:bg-gray"
               >
-                <div class="w-14 h-14 mx-auto lg:mx-0">
+                <div class="w-20 h-20 mx-auto lg:mx-0">
                   <img
                     src="/images/profile_pic.png"
                     alt=""
@@ -72,7 +72,7 @@
 
         <!-- messages section -->
         <div class="flex flex-col divide-y flex-grow">
-          <div class="flex fixed top-4 right-4 left-32 lg:left-470px">
+          <div class="flex fixed top-4 right-4 left-40 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
               <div class="flex place-items-center space-x-2">
                 <div class="w-14 h-14">
@@ -95,7 +95,7 @@
           </div>
 
           <div
-            class="flex fixed top-24 bottom-28 left-32 right-4 lg:left-470px"
+            class="flex fixed top-24 bottom-24 left-40 right-4 lg:left-470px"
           >
             <div
               class="flex flex-col w-full overflow-y-auto p-4 space-y-4 font-medium text-xl"
@@ -109,14 +109,20 @@
                 <!-- right side -->
                 <div
                   v-if="message.sent"
-                  class="bg-blue p-4 rounded-full text-white"
+                  class="bg-blue px-4 py-2 rounded-full text-white"
                 >
-                  hi
                   {{ message.text }}
                 </div>
                 <!-- left side -->
-                <div v-else>
-                  <div class="bg-gray p-4 rounded-full object-right">
+                <div v-else class="flex items-end space-x-2">
+                  <div class="w-12 h-12">
+                    <img
+                      :src="message.profilePic"
+                      alt=""
+                      class="rounded-full"
+                    />
+                  </div>
+                  <div class="bg-gray px-4 py-2 rounded-full object-right">
                     {{ message.text }}
                   </div>
                 </div>
@@ -127,8 +133,7 @@
           <!-- <div class="flex fixed mt-40 border">scrollable: messages</div> -->
           <!-- <div class="flex border fixed bottom-4">fixed: send</div> -->
 
-          <!-- <div class="flex fixed border bottom-4 right-4 left-32 lg:left-470px"> -->
-          <div class="flex fixed bottom-4 right-4 left-32 lg:left-470px">
+          <div class="flex fixed bottom-4 right-4 left-40 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
               <div class="flex">
                 <div v-for="item in sendMessageActions" :key="item.icon">
@@ -137,7 +142,7 @@
                   </div>
                 </div>
               </div>
-              <div class="flex flex-grow bg-gray rounded-full p-4 mx-2">
+              <div class="flex flex-grow bg-gray rounded-full px-4 py-2 mx-2">
                 <input
                   type="text"
                   placeholder="Aa"
@@ -180,6 +185,11 @@ export default {
         },
       ],
       messages: [
+        {
+          sent: false,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
+        },
         {
           sent: true,
           class: 'self-end',
