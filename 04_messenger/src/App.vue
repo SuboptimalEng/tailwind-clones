@@ -34,7 +34,7 @@
                 <input
                   type="text"
                   placeholder="Search Messenger"
-                  class="bg-gray text-2xl"
+                  class="bg-gray text-2xl w-full focus:outline-none"
                 />
               </div>
             </div>
@@ -73,8 +73,8 @@
         </div>
 
         <!-- messages section -->
-        <div class="flex flex-col flex-grow">
-          <div class="flex fixed border top-4 right-4 left-32 lg:left-470px">
+        <div class="flex flex-col lg:divide-y flex-grow">
+          <div class="flex fixed top-4 right-4 left-32 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
               <div class="flex place-items-center space-x-2">
                 <div class="w-14 h-14">
@@ -97,9 +97,35 @@
               </div>
             </div>
           </div>
+
+          <div
+            class="flex fixed top-24 bottom-28 left-32 right-4 lg:left-470px"
+          >
+            <div
+              class="flex flex-col overflow-y-auto w-full p-4 space-y-4 font-medium text-xl"
+            >
+              <div v-for="message in messages" :key="message">
+                <!-- right side -->
+                <div v-if="message.sent">
+                  <div class="bg-blue p-4 rounded-full text-white">
+                    {{ message.text }}
+                  </div>
+                </div>
+                <!-- left side -->
+                <div v-else>
+                  <div class="bg-gray p-4 rounded-full object-right">
+                    {{ message.text }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- <div class="flex fixed mt-40 border">scrollable: messages</div> -->
           <!-- <div class="flex border fixed bottom-4">fixed: send</div> -->
-          <div class="flex fixed border bottom-4 right-4 left-32 lg:left-470px">
+
+          <!-- <div class="flex fixed border bottom-4 right-4 left-32 lg:left-470px"> -->
+          <div class="flex fixed bottom-4 right-4 left-32 lg:left-470px">
             <div class="flex p-4 place-items-center w-full justify-between">
               <div class="flex">
                 <div v-for="item in sendMessageActions" :key="item.icon">
@@ -112,14 +138,14 @@
                 <input
                   type="text"
                   placeholder="Aa"
-                  class="bg-gray rounded-full flex flex-grow"
+                  class="bg-gray text-2xl rounded-full w-full focus:outline-none"
                 />
                 <fa
                   :icon="['fas', 'smile']"
                   class="text-2xl my-auto text-blue"
                 />
               </div>
-              <div>
+              <div class="flex w-10 h-10 place-content-center">
                 <fa
                   :icon="['fas', 'thumbs-up']"
                   class="text-2xl my-auto text-blue"
@@ -152,28 +178,54 @@ export default {
       ],
       messages: [
         {
-          sent: 'false',
-          message: 'hello world',
+          sent: true,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
         },
         {
-          sent: 'false',
-          message: 'hello world',
+          sent: false,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
         },
         {
-          sent: 'false',
-          message: 'hello world',
+          sent: true,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
         },
         {
-          sent: 'false',
-          message: 'hello world',
+          sent: false,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
         },
         {
-          sent: 'true',
-          message: 'hello world',
+          sent: true,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
         },
         {
-          sent: 'false',
-          message: 'hello world',
+          sent: false,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
+        },
+        {
+          sent: true,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
+        },
+        {
+          sent: false,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
+        },
+        {
+          sent: true,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
+        },
+        {
+          sent: false,
+          text: 'hello world',
+          profilePic: '/images/profile_pic.png',
         },
       ],
       messageActions: [
