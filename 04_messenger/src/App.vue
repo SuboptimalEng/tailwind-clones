@@ -24,37 +24,6 @@
                     class="w-14 h-14 bg-gray rounded-full flex place-content-center"
                   >
                     <fa :icon="item.icon" class="text-2xl my-auto" />
-                    <!-- <Menu as="div" class="relative mx-auto my-auto">
-                      <MenuButton>
-                        <fa :icon="item.icon" class="text-2xl my-auto" />
-                      </MenuButton>
-                      <MenuItems class="absolute right-0 origin-top-right z-10">
-                        <MenuItem v-slot="{ active }">
-                          <div
-                            class="p-4 border bg-blue"
-                            :class="[
-                              active
-                                ? 'bg-blue-500 text-white'
-                                : 'bg-white text-black',
-                            ]"
-                          >
-                            Settings
-                          </div>
-                        </MenuItem>
-                        <MenuItem v-slot="{ active }">
-                          <div
-                            class="p-4 border bg-blue"
-                            :class="[
-                              active
-                                ? 'bg-blue-500 text-white'
-                                : 'bg-white text-black',
-                            ]"
-                          >
-                            Documentation
-                          </div>
-                        </MenuItem>
-                      </MenuItems>
-                    </Menu> -->
                   </div>
                 </div>
               </div>
@@ -194,16 +163,8 @@
 </template>
 
 <script>
-// import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
-
 export default {
   name: 'App',
-  components: {
-    // Menu,
-    // MenuButton,
-    // MenuItems,
-    // MenuItem,
-  },
   data() {
     return {
       active: false,
