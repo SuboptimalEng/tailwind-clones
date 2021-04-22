@@ -23,7 +23,8 @@
                   <div
                     class="w-14 h-14 bg-gray rounded-full flex place-content-center"
                   >
-                    <Menu as="div" class="relative mx-auto my-auto">
+                    <fa :icon="item.icon" class="text-2xl my-auto" />
+                    <!-- <Menu as="div" class="relative mx-auto my-auto">
                       <MenuButton>
                         <fa :icon="item.icon" class="text-2xl my-auto" />
                       </MenuButton>
@@ -53,7 +54,7 @@
                           </div>
                         </MenuItem>
                       </MenuItems>
-                    </Menu>
+                    </Menu> -->
                   </div>
                 </div>
               </div>
@@ -193,15 +194,15 @@
 </template>
 
 <script>
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
+// import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 
 export default {
   name: 'App',
   components: {
-    Menu,
-    MenuButton,
-    MenuItems,
-    MenuItem,
+    // Menu,
+    // MenuButton,
+    // MenuItems,
+    // MenuItem,
   },
   data() {
     return {
@@ -334,30 +335,6 @@ export default {
           profilePic: '/images/clement.jpeg',
           lastMessage: 'Heyhowsitgoing?',
           updated: '1d',
-        },
-        {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
-        },
-        {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
-        },
-        {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
-        },
-        {
-          name: 'Suboptimal Engineer',
-          profilePic: '/images/profile_pic.png',
-          lastMessage: 'Suboptimal sent 2 photos.',
-          updated: '2d',
         },
         {
           name: 'Suboptimal Engineer',
