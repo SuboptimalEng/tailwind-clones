@@ -196,6 +196,22 @@
                   <div>Followers</div>
                 </div>
               </div>
+
+              <!-- Add followed by section -->
+              <div class="flex items-center space-x-4">
+                <div class="flex -space-x-10">
+                  <div v-for="user in users" :key="user.name">
+                    <img
+                      :src="user.image"
+                      class="w-20 relative rounded-full border-4 border-eelg dark:border-tb"
+                      :class="`z-${user.zIndex}`"
+                    />
+                  </div>
+                </div>
+                <div class="text-xl hover:underline">
+                  Followed by dogecoin, wsbmod, naval and 12 others you follow
+                </div>
+              </div>
             </div>
             <!-- profile: misc -->
             <div class="relative grid grid-cols-4 text-2xl font-bold pt-4">
@@ -419,16 +435,19 @@ export default {
           image: '/images/doge.png',
           name: 'Dogecoin',
           handle: '@dogecoin',
+          zIndex: 30,
         },
         {
           image: '/images/wsb.png',
           name: 'wsb',
           handle: '@wsbmod',
+          zIndex: 20,
         },
         {
           image: '/images/naval.jpeg',
           name: 'Naval',
           handle: '@naval',
+          zIndex: 10,
         },
       ],
       tweets: [
