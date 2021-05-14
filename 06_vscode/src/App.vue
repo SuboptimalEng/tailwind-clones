@@ -1,16 +1,30 @@
 <template>
   <div class="flex w-full h-full min-h-screen theme-dracula">
     <div
-      class="flex flex-col absolute top-0 bottom-10 left-0 justify-between text-4xl p-6 bg-sidebar-bg"
+      class="flex flex-col absolute top-0 bottom-10 left-0 justify-between text-4xl bg-sidebar-bg"
     >
       <!-- sidebar -->
-      <div class="flex flex-col items-center space-y-8">
-        <div v-for="item in workbenchItems" :key="item.name">
-          <fa :icon="item.icon" class="text-sidebar-fg" />
+      <div class="flex flex-col items-center">
+        <div
+          v-for="item in workbenchItems"
+          :key="item.name"
+          class="relative px-6 py-4"
+        >
+          <div v-if="item.isActive">
+            <fa :icon="item.icon" class="text-off-white" />
+            <div class="absolute bg-off-white h-full w-0.5 top-0 left-0"></div>
+          </div>
+          <div v-else>
+            <fa :icon="item.icon" class="text-sidebar-fg" />
+          </div>
         </div>
       </div>
-      <div class="flex flex-col items-center space-y-8">
-        <div v-for="setting in userSettings" :key="setting.name">
+      <div class="flex flex-col items-center">
+        <div
+          v-for="setting in userSettings"
+          :key="setting.name"
+          class="px-6 py-4"
+        >
           <fa :icon="setting.icon" class="text-sidebar-fg" />
         </div>
       </div>
@@ -18,9 +32,11 @@
 
     <!-- extensions -->
     <div
-      class="flex absolute top-0 bottom-10 left-20 w-80 bg-editor-bg text-sidebar-fg"
+      class="flex absolute top-0 bottom-10 left-20 w-96 bg-editor-bg text-sidebar-fg"
     >
-      <div class="flex flex-col absolute w-full p-4 space-y-4">
+      <div
+        class="flex flex-col absolute w-full top-0 bottom-0 overflow-y-hidden p-4 space-y-4"
+      >
         <div class="flex items-center justify-between px-2">
           <div>EXTENSIONS</div>
           <div class="flex space-x-4">
@@ -39,7 +55,35 @@
           />
         </div>
         <div class="flex px-2 font-black">INSTALLED</div>
-        <div class="flex px-2 font-black">INSTALLED</div>
+        <div class="flex flex-col space-y-4 w-full">
+          <div
+            v-for="extension in installedExtensions"
+            :key="extension.name"
+            class="flex justify-between"
+          >
+            <div class="py-2 -ml-2 flex w-full items-center -space-x-2">
+              <div class="w-40">
+                <img :src="extension.image" alt="" class="rounded-full" />
+              </div>
+              <div class="flex flex-col w-full">
+                <div class="flex items-center justify-between">
+                  <div class="text-xl font-bold">
+                    {{ extension.name }}
+                  </div>
+                  <div>
+                    {{ extension.downloads }}
+                  </div>
+                </div>
+                <div>
+                  {{ extension.description }}
+                </div>
+                <div class="font-bold">
+                  {{ extension.creator }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -112,6 +156,7 @@ export default {
         {
           name: 'Extensions',
           icon: faCubes,
+          isActive: true,
         },
       ],
       userSettings: [
@@ -155,6 +200,64 @@ export default {
           icon: faEllipsisH,
         },
       },
+      installedExtensions: [
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+        {
+          name: 'Dracula Official',
+          image: '/images/dracula.png',
+          downloads: '2.2M',
+          description: 'Official Dracula Theme. A dark...',
+          creator: 'Dracula Theme',
+        },
+      ],
     };
   },
 };
