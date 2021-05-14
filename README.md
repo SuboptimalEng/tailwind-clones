@@ -1,9 +1,9 @@
 # 🍃 Cloning the UIs' of popular websites with Tailwind CSS
 
-## 06 VS Code - Tailwind Themes
+## 06 VS Code - Dark Mode & Dracula Theme
 
-<img src="/demos/06_vscode_dark.png" width="300">
-<img src="/demos/06_vscode_dracula.png" width="300">
+<img src="/demos/06_vscode_dark.png" width="600">
+<img src="/demos/06_vscode_dracula.png" width="600">
 
 ## 05 Twitter Followers - zIndex Images
 
