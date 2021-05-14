@@ -1,4 +1,4 @@
-# 🍃 Cloning the UIs' of popular websites with Tailwind CSS
+# 🍃 Images & GIFs of UIs recreated with Tailwind CSS
 
 ## 06 VS Code - Dark Mode & Dracula Theme
 
