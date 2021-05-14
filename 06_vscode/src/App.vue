@@ -1,5 +1,6 @@
 <template>
-  <div class="flex w-full h-full min-h-screen theme-dracula">
+  <!-- <div class="flex w-full h-full min-h-screen theme-dracula"> -->
+  <div class="flex w-full h-full min-h-screen">
     <div
       class="flex flex-col absolute top-0 bottom-10 left-0 justify-between text-4xl bg-sidebar-bg"
     >
@@ -70,8 +71,16 @@
                   <div class="text-xl font-bold">
                     {{ extension.name }}
                   </div>
-                  <div>
-                    {{ extension.downloads }}
+                  <div class="flex space-x-2">
+                    <div>
+                      <fa
+                        :icon="cloudDownloadIcon.icon"
+                        class="text-sidebar-fg"
+                      />
+                    </div>
+                    <div>
+                      {{ extension.downloads }}
+                    </div>
                   </div>
                 </div>
                 <div>
@@ -197,6 +206,7 @@ import {
   faBolt,
   faLightbulb,
   faGraduationCap,
+  faCloudDownloadAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default {
@@ -267,6 +277,9 @@ export default {
           icon: faEllipsisH,
         },
       },
+      cloudDownloadIcon: {
+        icon: faCloudDownloadAlt,
+      },
       installedExtensions: [
         {
           name: 'Dracula Official',
@@ -278,35 +291,35 @@ export default {
         {
           name: 'VS Code Tinder',
           image: '/images/vsinder.png',
-          downloads: '2.2M',
+          downloads: '6.9M',
           description: 'A dating app for developers...',
           creator: '@benawad',
         },
         {
           name: 'Doge House',
           image: '/images/dogehouse.png',
-          downloads: '2.2M',
+          downloads: '500k',
           description: 'Voice convos to the moon...',
           creator: '@benawad',
         },
         {
           name: 'Material Icons',
           image: '/images/material.png',
-          downloads: '2.2M',
+          downloads: '1.5M',
           description: 'Material Design Icons for VS...',
           creator: '@PhilippKief',
         },
         {
           name: 'Docker',
           image: '/images/docker.png',
-          downloads: '2.2M',
+          downloads: '2.4M',
           description: 'Makes it easy to create, manage...',
           creator: '@Microsoft',
         },
         {
           name: 'C#',
           image: '/images/csharp.png',
-          downloads: '2.2M',
+          downloads: '3.2M',
           description: 'Makes it easy to create, manage...',
           creator: '@Microsoft',
         },

@@ -1,5 +1,10 @@
 # 🍃 Cloning the UIs' of popular websites with Tailwind CSS
 
+## 06 VS Code - Tailwind Themes
+
+<img src="/demos/06_vscode_dark.png" width="300">
+<img src="/demos/06_vscode_dracula.png" width="300">
+
 ## 05 Twitter Followers - zIndex Images
 
 <img src="/demos/05_twitter_followers.png" width="600">

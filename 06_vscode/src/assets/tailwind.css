@@ -17,6 +17,14 @@
     --off-white: #fafafa;
   }
 
-  /* .theme-dracula { } */
-  /* .theme-gruvbox { } */
+  .theme-dracula {
+    --activity-bg: #21222c;
+    --sidebar-fg: #000000;
+    --sidebar-bg: #8be9fd;
+    --explorer-fg: #000000;
+    --explorer-bg: #bd93f9;
+    --editor-fg: #000000;
+    --editor-bg: #ff79c6;
+    --off-white: #000000;
+  }
 }
