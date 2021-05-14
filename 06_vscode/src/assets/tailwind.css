@@ -1,0 +1,22 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  /* vscode default dark */
+  :root {
+    --activity-bg: #007acc;
+    --sidebar-fg: #cccccc;
+    --sidebar-bg: #323233;
+    --explorer-fg: #cccccc;
+    --explorer-bg: #252526;
+    --editor-fg: #d4d4d4;
+    --editor-bg: #1e1e1e;
+    --off-white: #fafafa;
+  }
+
+  /* .theme-dracula { } */
+  /* .theme-gruvbox { } */
+}
