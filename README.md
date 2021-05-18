@@ -1,13 +1,12 @@
 # 🍃 Images & GIFs of UIs recreated with Tailwind CSS
 
-## 06 VS Code - Dark Mode & Dracula Theme
+## 05 VS Code - Dark Mode & Dracula Theme
 
-<img src="/demos/06_vscode_dark.png" width="600">
-<img src="/demos/06_vscode_dracula.png" width="600">
+<img src="/demos/05_vscode_dark.png" width="600">
+<img src="/demos/05_vscode_dracula.png" width="600">
 
-## 05 Twitter Followers - zIndex Images
-
-<img src="/demos/05_twitter_followers.png" width="600">
+<!-- ## 05 Twitter Followers - zIndex Images
+<img src="/demos/05_twitter_followers.png" width="600"> -->
 
 ## 04 Messenger - Tailwind Themes + Responsive UI + Electron Desktop App
 

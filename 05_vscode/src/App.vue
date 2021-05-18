@@ -1,10 +1,10 @@
 <template>
   <!-- <div class="flex w-full h-full min-h-screen theme-dracula"> -->
   <div class="flex w-full h-full min-h-screen">
+    <!-- sidebar -->
     <div
       class="flex flex-col absolute top-0 bottom-10 left-0 justify-between text-4xl bg-sidebar-bg"
     >
-      <!-- sidebar -->
       <div class="flex flex-col items-center">
         <div
           v-for="item in workbenchItems"
@@ -96,6 +96,7 @@
       </div>
     </div>
 
+    <!-- file: tabs -->
     <div class="absolute ml-20 left-96 top-0 right-0 bottom-10 bg-editor-bg">
       <div class="flex">
         <div
@@ -111,6 +112,7 @@
       </div>
     </div>
 
+    <!-- file: editor -->
     <div
       class="absolute ml-20 left-96 top-10 right-0 bottom-10 bg-editor-bg text-off-white"
     >
@@ -158,7 +160,7 @@
       </div>
     </div>
 
-    <!-- activity -->
+    <!-- activity bar -->
     <div
       class="absolute bottom-0 h-10 w-full px-6 flex justify-between bg-activity-bg"
     >
