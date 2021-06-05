@@ -1,4 +1,4 @@
-# 🍃 Images & GIFs of UIs recreated with Tailwind CSS
+# 🍃 Images & GIFs some of my Suboptimal Clones
 
 ## 05 VS Code - Dark Mode & Dracula Theme
 
