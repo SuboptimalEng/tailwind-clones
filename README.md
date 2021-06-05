@@ -2,8 +2,8 @@
 
 ## VS Code - Dark Mode & Dracula Theme
 
-<img src="/demos/05_vscode_dark.png" width="600">
-<img src="/demos/05_vscode_dracula.png" width="600">
+<img src="/demos/99_vscode_dark.png" width="600">
+<img src="/demos/99_vscode_dracula.png" width="600">
 
 ## Messenger - Tailwind Themes + Responsive UI + Electron Desktop App
 
