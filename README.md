@@ -1,6 +1,6 @@
 # 🍃 Demo GIFs & Images of my Suboptimal Clones
 
-## Messenger - Tailwind Themes + Responsive UI + Electron Desktop App
+## Messenger - Tailwind Themes + Responsive UI + Electron App
 
 <img src="/demos/04_messenger.gif" width="600">
 
@@ -8,11 +8,11 @@
 
 <img src="/demos/03_twitter.gif" width="600">
 
-## Reddit - Responsive UI
+## Reddit - Tailwind CSS + Responsive UI
 
 <img src="/demos/02_reddit.gif" width="600">
 
-## YouTube - Nothing Special
+## YouTube - Tailwind CSS UI Clone
 
 <img src="/demos/01_youtube.gif" width="600">
 
