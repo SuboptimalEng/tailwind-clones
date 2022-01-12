@@ -1,4 +1,4 @@
-# 🍃 Demo GIFs & Images of my Suboptimal Clones
+# 🍃 Demo GIFs + Images
 
 ## Messenger - Tailwind Themes + Responsive UI + Electron App
 
