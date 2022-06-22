@@ -2,7 +2,7 @@
 
 ## Messenger - Tailwind Themes + Responsive UI + Electron App
 
-<img src="/demos/04_messenger.gif" />
+<img src="/demos/04_messenger.gif" width="100%"/>
 
 ## Twitter - Tailwind Themes + Responsive UI + Dark Mode
 
