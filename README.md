@@ -1,12 +1,12 @@
 # 🍃 Demo GIFs + Images
 
-## Twitter - Tailwind Themes + Responsive UI + Dark Mode
-
-<img src="/_demos/03_twitter.gif" width="100%" />
-
 ## Messenger - Tailwind Themes + Responsive UI + Electron App
 
 <img src="/_demos/04_messenger.gif" width="100%" />
+
+## Twitter - Tailwind Themes + Responsive UI + Dark Mode
+
+<img src="/_demos/03_twitter.gif" width="100%" />
 
 ## Reddit - Tailwind CSS + Responsive UI
 
